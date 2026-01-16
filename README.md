@@ -34,7 +34,7 @@ A beautiful, bilingual (English/Portuguese) spa website built with Next.js 16, T
 
 ### Installation
 
-```bash
+\`\`\`bash
 # Clone the repository
 git clone <repo-url>
 
@@ -43,7 +43,7 @@ npm install
 
 # Run development server
 npm run dev
-```
+\`\`\`
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
@@ -55,11 +55,11 @@ No environment variables are required for basic functionality.
 
 ### Colors
 Edit design tokens in `app/globals.css`:
-```css
+\`\`\`css
 --gold: #d4af37;
 --dark-green: #1a3c34;
 --cream: #f8f5f0;
-```
+\`\`\`
 
 ### Services & Pricing
 Edit service data in `app/services/page.tsx` and `app/providers.tsx`
@@ -74,19 +74,19 @@ Update phone numbers, email, and social links in:
 
 ### Deploy to Vercel (Recommended)
 
-```bash
+\`\`\`bash
 # Push to GitHub
 git push origin main
 
 # Connect to Vercel and deploy
 # Follow: https://vercel.com/docs/concepts/deployments/git-pushes
-```
+\`\`\`
 
 Or directly:
-```bash
+\`\`\`bash
 npm install -g vercel
 vercel
-```
+\`\`\`
 
 ### Update Domain
 1. In `next.config.mjs`, update any domain references
