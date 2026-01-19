@@ -15,21 +15,8 @@ export const metadata: Metadata = {
   generator: "v0.app",
   keywords: ["spa", "wellness", "massage", "yoga", "nails", "Mozambique", "Matola"],
   icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
+    icon: "/Camy Spa Black Logo.png",
+    apple: "/Camy Spa Black Logo.png",
   },
   openGraph: {
     title: "CAMY Wellness & Spa",

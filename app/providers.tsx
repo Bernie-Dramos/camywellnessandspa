@@ -71,6 +71,21 @@ const translations = {
     "home.treatDesc": "Discover the perfect service for your wellness journey. Book your appointment now.",
     "home.getInTouch": "Get in Touch",
 
+    // Mission, Vision, Values
+    "about.mission": "Mission",
+    "about.missionText": "Our mission is to offer a serene escape of refined beauty and wellness.",
+    "about.vision": "Vision",
+    "about.visionText": "Our vision is to create a space where self care feels natural, elegance feels effortless and well being is always within reach.",
+    "about.values": "Values",
+    "about.value1Title": "Make elegance effortless",
+    "about.value1Desc": "Offering refined experiences without barriers of exclusivity.",
+    "about.value2Title": "Deliver Excellence",
+    "about.value2Desc": "From our service to atmosphere, reflect skill, dedication and care.",
+    "about.value3Title": "Honor Connection",
+    "about.value3Desc": "Between beauty, balance, and wellbeing, nurturing mind and body.",
+    "about.value4Title": "Tailor Experiences",
+    "about.value4Desc": "Every experience to accommodate each client's individuality with warmth.",
+
     // About Page Legal
     "about.excellence": "Excellence",
     "about.excellenceDesc": "Professional and high-quality services delivered with expertise",
@@ -154,6 +169,21 @@ const translations = {
     "home.treat": "Trate-se Hoje",
     "home.treatDesc": "Descubra o serviço perfeito para sua jornada de bem-estar. Marque seu compromisso agora.",
     "home.getInTouch": "Entre em Contato",
+
+    // Missão, Visão, Valores
+    "about.mission": "Missão",
+    "about.missionText": "Oferecer um refúgio sereno de beleza refinada e bem-estar.",
+    "about.vision": "Visão",
+    "about.visionText": "Nossa visão é criar um espaço onde o autocuidado seja normalizado, a elegância seja simples e o bem-estar esteja sempre ao seu alcance.",
+    "about.values": "Valores",
+    "about.value1Title": "Tornar a elegância algo fácil",
+    "about.value1Desc": "Oferecendo experiências refinadas sem barreiras de exclusividade.",
+    "about.value2Title": "Oferecer excelência",
+    "about.value2Desc": "Em nossos serviços e ambiente, refletindo habilidade, dedicação e cuidado.",
+    "about.value3Title": "Honrar a conexão",
+    "about.value3Desc": "Entre a beleza, o equilíbrio e o bem-estar, nutrindo a mente e o corpo.",
+    "about.value4Title": "Adaptar experiências",
+    "about.value4Desc": "Cada experiência para acomodar a individualidade de cada cliente com aconchego.",
 
     // Página Sobre - Informações Legais
     "about.excellence": "Excelência",

@@ -20,8 +20,68 @@ export default function About() {
         </div>
       </section>
 
-      {/* Our Commitment */}
+      {/* Mission, Vision, Values */}
       <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Mission */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-serif font-light mb-4 text-[#d4af37]">{t("about.mission")}</h2>
+            <p className="text-lg leading-relaxed text-gray-700 text-balance">
+              {t("about.missionText")}
+            </p>
+          </div>
+
+          {/* Vision */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-serif font-light mb-4 text-[#d4af37]">{t("about.vision")}</h2>
+            <p className="text-lg leading-relaxed text-gray-700 text-balance">
+              {t("about.visionText")}
+            </p>
+          </div>
+
+          {/* Values */}
+          <div className="mb-12">
+            <h2 className="text-3xl md:text-4xl font-serif font-light mb-10 text-center text-[#d4af37]">{t("about.values")}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="p-6 border-l-4 border-[#d4af37] bg-[#f8f5f0]">
+                <h3 className="text-xl font-serif font-semibold text-[#1a3c34] mb-2">
+                  {t("about.value1Title")}
+                </h3>
+                <p className="text-gray-600">
+                  {t("about.value1Desc")}
+                </p>
+              </div>
+              <div className="p-6 border-l-4 border-[#d4af37] bg-[#f8f5f0]">
+                <h3 className="text-xl font-serif font-semibold text-[#1a3c34] mb-2">
+                  {t("about.value2Title")}
+                </h3>
+                <p className="text-gray-600">
+                  {t("about.value2Desc")}
+                </p>
+              </div>
+              <div className="p-6 border-l-4 border-[#d4af37] bg-[#f8f5f0]">
+                <h3 className="text-xl font-serif font-semibold text-[#1a3c34] mb-2">
+                  {t("about.value3Title")}
+                </h3>
+                <p className="text-gray-600">
+                  {t("about.value3Desc")}
+                </p>
+              </div>
+              <div className="p-6 border-l-4 border-[#d4af37] bg-[#f8f5f0]">
+                <h3 className="text-xl font-serif font-semibold text-[#1a3c34] mb-2">
+                  {t("about.value4Title")}
+                </h3>
+                <p className="text-gray-600">
+                  {t("about.value4Desc")}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Commitment */}
+      <section className="py-16 md:py-24 bg-gradient-to-b from-[#f8f5f0] to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-serif font-light mb-8 text-[#1a3c34]">{t("about.commitment")}</h2>
