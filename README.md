@@ -25,7 +25,7 @@ A beautiful, bilingual (English/Portuguese) spa website built with Next.js 16, T
 - **Fonts**: Playfair Display (headings), Geist (body)
 - **Components**: Custom React components with Lucide icons
 - **Internationalization**: Custom Language Context (EN/PT)
-- **Deployment**: Ready for Vercel
+- **Deployment**: Standalone Node.js (Next.js build/start)
 
 ## Getting Started
 
@@ -72,22 +72,16 @@ Update phone numbers, email, and social links in:
 
 ## Deployment
 
-### Deploy to Vercel (Recommended)
+### Deploy (Standalone)
 
-\`\`\`bash
-# Push to GitHub
-git push origin main
+ 
+```bash
+# Build production assets
+npm run build
 
-# Connect to Vercel and deploy
-# Follow: https://vercel.com/docs/concepts/deployments/git-pushes
-\`\`\`
-
-Or directly:
-\`\`\`bash
-npm install -g vercel
-vercel
-\`\`\`
-
+# Start production server
+npm run start
+```
 ### Update Domain
 1. In `next.config.mjs`, update any domain references
 2. In `app/sitemap.ts` and `app/robots.ts`, update the domain URL
@@ -117,4 +111,4 @@ For issues or questions:
 - Phone: +258 841 921 846
 - WhatsApp: https://wa.me/258841921846
 - Instagram: @camywellnessspa
-`
+ 

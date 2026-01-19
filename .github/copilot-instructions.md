@@ -51,7 +51,7 @@ npm run lint         # Run ESLint
 - **No external CMS/API** – All content is code-based; changes require code commits
 - **No form backends** – Contact forms would need API integration (currently not implemented)
 - **Domain/URL**: Update in [next.config.mjs](next.config.mjs), [app/robots.ts](app/robots.ts), [app/sitemap.ts](app/sitemap.ts)
-- **Analytics**: Vercel Analytics enabled in [app/layout.tsx](app/layout.tsx)
+- **Analytics**: No analytics by default; add your preferred provider if needed
 - **IgnoreBuildErrors**: TypeScript strict mode enabled but build errors ignored (see [next.config.mjs](next.config.mjs))
 
 ## Contact & Booking Integration

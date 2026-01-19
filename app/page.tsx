@@ -88,7 +88,7 @@ export default function Home() {
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/50 to-black/60" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/60 via-black/50 to-black/60" />
 
         {/* Content */}
         <div className="relative z-10 text-center text-white max-w-3xl mx-auto px-4">
@@ -117,7 +117,7 @@ export default function Home() {
       </section>
 
       {/* Services Overview */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-white to-[#f8f5f0]">
+      <section className="py-16 md:py-24 bg-linear-to-b from-white to-[#f8f5f0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-light mb-4 text-[#1a3c34]">{t("services.title")}</h2>
@@ -181,7 +181,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-[#f8f5f0] to-white">
+      <section className="py-16 md:py-24 bg-linear-to-b from-[#f8f5f0] to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-light mb-4 text-[#1a3c34]">{language === "en" ? "What Our Clients Say" : "O Que Nossos Clientes Dizem"}</h2>
