@@ -13,7 +13,19 @@ export default function About() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-80 flex items-center justify-center overflow-hidden bg-gradient-to-r from-[#1a3c34] to-[#2d5a50]">
+      <section className="relative h-150 flex items-center justify-center overflow-hidden bg-linear-to-r from-[#1a3c34] to-[#2d5a50]">
+        {/* Background Video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        >
+          <source src="/reception.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div className="relative z-10 text-center text-white">
           <h1 className="text-5xl md:text-6xl font-serif font-light mb-2">{t("about.title")}</h1>
           <div className="w-20 h-1 bg-[#d4af37] mx-auto" />

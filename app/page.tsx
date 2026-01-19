@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { useRef, useEffect } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { useLanguage } from "@/app/providers"
@@ -14,7 +15,7 @@ const services = [
     pt: "Estúdio de Unhas",
     descEn: "Professional manicure, pedicure, and nail art services",
     descPt: "Serviços profissionais de manicure, pedicure e nail art",
-    image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=500&h=400&fit=crop",
+    image: "/unhas_laranjas.jpg",
   },
   {
     id: 2,
@@ -23,7 +24,7 @@ const services = [
     pt: "Massagens e Bem-Estar",
     descEn: "Relaxing massages and therapeutic treatments",
     descPt: "Massagens relaxantes e tratamentos terapêuticos",
-    image: "https://images.unsplash.com/photo-1600334089393-b8ca6b5d81a5?w=500&h=400&fit=crop",
+    image: "/toalhas.jpg",
   },
   {
     id: 3,
@@ -32,7 +33,7 @@ const services = [
     pt: "Yoga e Alinhamento",
     descEn: "Individual and group yoga classes for wellness",
     descPt: "Aulas de yoga individuais e em grupo para bem-estar",
-    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&h=400&fit=crop",
+    image: "/yoga.png",
   },
   {
     id: 4,
@@ -41,7 +42,7 @@ const services = [
     pt: "Limpeza Facial",
     descEn: "Premium facial treatments and skin care",
     descPt: "Tratamentos faciais premium e cuidados da pele",
-    image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=500&h=400&fit=crop",
+    image: "/face.jpg",
   },
 ]
 
@@ -71,24 +72,35 @@ const testimonials = [
 
 export default function Home() {
   const { language, t } = useLanguage()
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.5
+    }
+  }, [])
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage:
-              'url("/images/hero-section.jpeg")',
-          }}
-        />
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gray-900">
+        {/* Background Video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        >
+          <source src="/salao-unhas.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-linear-to-r from-black/60 via-black/50 to-black/60" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/40 via-black/30 to-black/40" />
 
         {/* Content */}
         <div className="relative z-10 text-center text-white max-w-3xl mx-auto px-4">
@@ -135,8 +147,8 @@ export default function Home() {
                   key={service.id}
                   className="group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
                 >
-                  {/* Image */}
-                  <div className="relative h-48 overflow-hidden">
+                    {/* Image */}
+                    <div className="relative h-60 overflow-hidden">
                     <img
                       src={service.image || "/placeholder.svg"}
                       alt={title}
