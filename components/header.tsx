@@ -30,10 +30,6 @@ export function Header() {
               className="w-10 h-10 md:w-12 md:h-12 rounded-[15px] object-cover"
               priority
             />
-            <div className="hidden sm:flex flex-col">
-              <span className="text-[#d4af37] font-serif font-semibold text-base md:text-lg">CAMY</span>
-              <span className="text-gray-600 text-xs md:text-sm font-light">Wellness & Spa</span>
-            </div>
           </Link>
 
           {/* Desktop Navigation */}
