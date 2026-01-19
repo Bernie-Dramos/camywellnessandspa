@@ -83,12 +83,12 @@ export default function Home() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage:
-              'url("https://images.unsplash.com/photo-1600334089393-b8ca6b5d81a5?w=1600&h=900&fit=crop")',
+              'url("/images/hero-section.jpeg")',
           }}
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/50 to-black/60" />
 
         {/* Content */}
         <div className="relative z-10 text-center text-white max-w-3xl mx-auto px-4">
@@ -184,7 +184,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-gradient-to-b from-[#f8f5f0] to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-light mb-4 text-[#1a3c34]">What Our Clients Say</h2>
+            <h2 className="text-4xl md:text-5xl font-serif font-light mb-4 text-[#1a3c34]">{language === "en" ? "What Our Clients Say" : "O Que Nossos Clientes Dizem"}</h2>
             <div className="w-20 h-1 bg-[#d4af37] mx-auto" />
           </div>
 
@@ -226,9 +226,11 @@ export default function Home() {
       {/* CTA Banner */}
       <section className="py-16 md:py-24 bg-[#1a3c34] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-serif font-light mb-6">Treat Yourself Today</h2>
+          <h2 className="text-4xl md:text-5xl font-serif font-light mb-6">{language === "en" ? "Treat Yourself Today" : "Trate-se Hoje"}</h2>
           <p className="text-xl mb-8 opacity-90">
-            Discover the perfect service for your wellness journey. Book your appointment now.
+            {language === "en"
+              ? "Discover the perfect service for your wellness journey. Book your appointment now."
+              : "Descubra o serviço perfeito para sua jornada de bem-estar. Marque seu compromisso agora."}
           </p>
           <a
             href="https://wa.me/258841921846"
@@ -236,7 +238,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className="inline-flex px-8 py-4 bg-[#d4af37] text-[#1a3c34] font-semibold rounded hover:bg-[#e8d4a8] transition-colors text-lg"
           >
-            Get in Touch
+            {t("nav.book")}
           </a>
         </div>
       </section>

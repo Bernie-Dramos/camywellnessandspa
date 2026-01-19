@@ -1,8 +1,5 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { useLanguage } from "@/app/providers"
@@ -10,46 +7,6 @@ import { MapPin, Phone, Mail, Instagram } from "lucide-react"
 
 export default function About() {
   const { language, t } = useLanguage()
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    message: "",
-  })
-  const [submitted, setSubmitted] = useState(false)
-  const [loading, setLoading] = useState(false)
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }))
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setLoading(true)
-
-    try {
-      // Simulate form submission
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-      setSubmitted(true)
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        service: "",
-        message: "",
-      })
-      setTimeout(() => setSubmitted(false), 5000)
-    } catch (error) {
-      console.error("Form submission error:", error)
-    } finally {
-      setLoading(false)
-    }
-  }
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -82,12 +39,10 @@ export default function About() {
                 <span className="text-3xl text-[#d4af37]">✨</span>
               </div>
               <h3 className="text-xl font-serif font-semibold text-[#1a3c34] mb-2">
-                {language === "en" ? "Excellence" : "Excelência"}
+                {t("about.excellence")}
               </h3>
               <p className="text-gray-600">
-                {language === "en"
-                  ? "Professional and high-quality services delivered with expertise"
-                  : "Serviços profissionais e de alta qualidade entregues com experiência"}
+                {t("about.excellenceDesc")}
               </p>
             </div>
 
@@ -96,12 +51,10 @@ export default function About() {
                 <span className="text-3xl text-[#d4af37]">🤝</span>
               </div>
               <h3 className="text-xl font-serif font-semibold text-[#1a3c34] mb-2">
-                {language === "en" ? "Care" : "Cuidado"}
+                {t("about.care")}
               </h3>
               <p className="text-gray-600">
-                {language === "en"
-                  ? "Personalized attention and consideration for every client"
-                  : "Atenção personalizada e consideração para cada cliente"}
+                {t("about.careDesc")}
               </p>
             </div>
 
@@ -110,12 +63,10 @@ export default function About() {
                 <span className="text-3xl text-[#d4af37]">🔒</span>
               </div>
               <h3 className="text-xl font-serif font-semibold text-[#1a3c34] mb-2">
-                {language === "en" ? "Confidentiality" : "Confidencialidade"}
+                {t("about.confidentiality")}
               </h3>
               <p className="text-gray-600">
-                {language === "en"
-                  ? "Your privacy and peace of mind are our priority"
-                  : "Sua privacidade e tranquilidade são nossa prioridade"}
+                {t("about.confidentialityDesc")}
               </p>
             </div>
           </div>
@@ -216,126 +167,34 @@ export default function About() {
         </div>
       </section>
 
-      {/* Contact Form */}
+      {/* Legal Information */}
       <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-serif font-light mb-4 text-center text-[#1a3c34]">
-            {language === "en" ? "Get in Touch" : "Entre em Contato"}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl md:text-5xl font-serif font-light mb-12 text-center text-[#1a3c34]">
+            {t("about.legal")}
           </h2>
-          <p className="text-center text-gray-600 mb-12">
-            {language === "en"
-              ? "Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible."
-              : "Tem perguntas? Adoraríamos ouvir você. Envie-nos uma mensagem e responderemos o mais breve possível."}
-          </p>
 
-          {submitted && (
-            <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-              <p className="text-green-800">
-                {language === "en"
-                  ? "Thank you for your message! We'll be in touch soon."
-                  : "Obrigado pela sua mensagem! Entraremos em contato em breve."}
-              </p>
-            </div>
-          )}
-
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-[#1a3c34] mb-2">
-                  {language === "en" ? "Name" : "Nome"}
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-transparent"
-                  placeholder={language === "en" ? "Your name" : "Seu nome"}
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-[#1a3c34] mb-2">
-                  {language === "en" ? "Email" : "E-mail"}
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-transparent"
-                  placeholder={language === "en" ? "your@email.com" : "seu@email.com"}
-                />
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-gradient-to-br from-[#f8f5f0] to-white p-6 rounded-lg border border-[#d4af37]/30">
+              <h3 className="text-lg font-semibold text-[#1a3c34] mb-2">{t("about.nuit")}</h3>
+              <p className="text-3xl font-serif text-[#d4af37]">402002026</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-[#1a3c34] mb-2">
-                  {language === "en" ? "Phone" : "Telefone"}
-                </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-transparent"
-                  placeholder="+258 ..."
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-[#1a3c34] mb-2">
-                  {language === "en" ? "Service Interested In" : "Serviço de Interesse"}
-                </label>
-                <select
-                  name="service"
-                  value={formData.service}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-transparent"
-                >
-                  <option value="">{language === "en" ? "Select a service" : "Selecione um serviço"}</option>
-                  <option value="nails">{language === "en" ? "Nail Studio" : "Estúdio de Unhas"}</option>
-                  <option value="massage">{language === "en" ? "Massages" : "Massagens"}</option>
-                  <option value="yoga">{language === "en" ? "Yoga" : "Yoga"}</option>
-                  <option value="facial">{language === "en" ? "Facial Care" : "Limpeza Facial"}</option>
-                  <option value="waxing">{language === "en" ? "Waxing" : "Depilação a Cera"}</option>
-                  <option value="makeup">{language === "en" ? "Makeup" : "Maquilhagem"}</option>
-                </select>
-              </div>
+            <div className="bg-gradient-to-br from-[#f8f5f0] to-white p-6 rounded-lg border border-[#d4af37]/30">
+              <h3 className="text-lg font-semibold text-[#1a3c34] mb-2">{t("about.nuel")}</h3>
+              <p className="text-3xl font-serif text-[#d4af37]">105008783</p>
             </div>
 
-            <div>
-              <label className="block text-sm font-medium text-[#1a3c34] mb-2">
-                {language === "en" ? "Message" : "Mensagem"}
-              </label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={5}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-transparent resize-none"
-                placeholder={language === "en" ? "Your message..." : "Sua mensagem..."}
-              />
+            <div className="bg-gradient-to-br from-[#f8f5f0] to-white p-6 rounded-lg border border-[#d4af37]/30">
+              <h3 className="text-lg font-semibold text-[#1a3c34] mb-2">{t("about.alvara")}</h3>
+              <p className="text-3xl font-serif text-[#d4af37]">279/10/01/2025</p>
             </div>
 
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full px-8 py-3 bg-[#d4af37] text-white font-medium rounded hover:bg-[#c9a63f] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {loading
-                ? language === "en"
-                  ? "Sending..."
-                  : "Enviando..."
-                : language === "en"
-                  ? "Send Message"
-                  : "Enviar Mensagem"}
-            </button>
-          </form>
+            <div className="bg-gradient-to-br from-[#f8f5f0] to-white p-6 rounded-lg border border-[#d4af37]/30">
+              <h3 className="text-lg font-semibold text-[#1a3c34] mb-2">{t("about.inicioAtiv")}</h3>
+              <p className="text-3xl font-serif text-[#d4af37]">01/10/2025</p>
+            </div>
+          </div>
         </div>
       </section>
 

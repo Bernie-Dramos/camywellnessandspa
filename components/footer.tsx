@@ -85,19 +85,19 @@ export function Footer() {
           <div>
             <h4 className="text-[#d4af37] font-semibold text-sm mb-4">{t("footer.hours")}</h4>
             <p className="text-gray-300 text-sm">
-              <strong>Monday - Friday:</strong>
+              <strong>{t("footer.monday")}:</strong>
               <br />
-              9:00 AM - 6:00 PM
+              {t("footer.monFriHours")}
             </p>
             <p className="text-gray-300 text-sm mt-3">
-              <strong>Saturday:</strong>
+              <strong>{t("footer.saturday")}:</strong>
               <br />
-              10:00 AM - 5:00 PM
+              {t("footer.satHours")}
             </p>
             <p className="text-gray-300 text-sm mt-3">
-              <strong>Sunday:</strong>
+              <strong>{t("footer.sunday")}:</strong>
               <br />
-              Closed
+              {t("footer.sunHours")}
             </p>
           </div>
         </div>

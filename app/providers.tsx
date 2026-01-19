@@ -51,13 +51,52 @@ const translations = {
     "about.instagram": "Instagram",
     "about.whatsapp": "WhatsApp",
 
-    // Footer
+    // Footer & Business Hours
     "footer.hours": "Hours",
     "footer.contact": "Contact",
     "footer.followus": "Follow Us",
     "footer.terms": "Terms & Conditions",
     "footer.privacy": "Privacy Policy",
     "footer.copyright": "© 2026 CAMY Wellness & Spa. All rights reserved.",
+    "footer.monday": "Monday - Friday",
+    "footer.saturday": "Saturday",
+    "footer.sunday": "Sunday",
+    "footer.monFriHours": "9:00 AM - 6:00 PM",
+    "footer.satHours": "10:00 AM - 5:00 PM",
+    "footer.sunHours": "24hr Pre-Booking only",
+
+    // Home Page
+    "home.testimonials": "What Our Clients Say",
+    "home.treat": "Treat Yourself Today",
+    "home.treatDesc": "Discover the perfect service for your wellness journey. Book your appointment now.",
+    "home.getInTouch": "Get in Touch",
+
+    // About Page Legal
+    "about.excellence": "Excellence",
+    "about.excellenceDesc": "Professional and high-quality services delivered with expertise",
+    "about.care": "Care",
+    "about.careDesc": "Personalized attention and consideration for every client",
+    "about.confidentiality": "Confidentiality",
+    "about.confidentialityDesc": "Your privacy and peace of mind are our priority",
+    "about.legal": "Legal Information",
+    "about.nuit": "NUIT",
+    "about.nuel": "NUEL",
+    "about.alvara": "Alvará",
+    "about.inicioAtiv": "Business Start Date",
+    "about.sendMessage": "Send a message",
+
+    // Form Labels
+    "form.name": "Name",
+    "form.email": "Email",
+    "form.phone": "Phone",
+    "form.serviceInterested": "Service Interested In",
+    "form.selectService": "Select a service",
+    "form.message": "Message",
+    "form.sending": "Sending...",
+    "form.sendMessage": "Send Message",
+    "form.questions": "Have questions?",
+    "form.questionsDesc": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+    "form.thankyou": "Thank you for your message! We'll be in touch soon.",
   },
   pt: {
     // Navegação
@@ -96,13 +135,52 @@ const translations = {
     "about.instagram": "Instagram",
     "about.whatsapp": "WhatsApp",
 
-    // Rodapé
+    // Rodapé e Horário de Funcionamento
     "footer.hours": "Horários",
     "footer.contact": "Contato",
     "footer.followus": "Siga-nos",
     "footer.terms": "Termos e Condições",
     "footer.privacy": "Política de Privacidade",
     "footer.copyright": "© 2026 CAMY Wellness & Spa. Todos os direitos reservados.",
+    "footer.monday": "Segunda - Sexta",
+    "footer.saturday": "Sábado",
+    "footer.sunday": "Domingo",
+    "footer.monFriHours": "9:00 - 18:00",
+    "footer.satHours": "10:00 - 17:00",
+    "footer.sunHours": "Apenas pré-marcação 24h",
+
+    // Página Inicial
+    "home.testimonials": "O Que Nossos Clientes Dizem",
+    "home.treat": "Trate-se Hoje",
+    "home.treatDesc": "Descubra o serviço perfeito para sua jornada de bem-estar. Marque seu compromisso agora.",
+    "home.getInTouch": "Entre em Contato",
+
+    // Página Sobre - Informações Legais
+    "about.excellence": "Excelência",
+    "about.excellenceDesc": "Serviços profissionais e de alta qualidade entregues com experiência",
+    "about.care": "Cuidado",
+    "about.careDesc": "Atenção personalizada e consideração para cada cliente",
+    "about.confidentiality": "Confidencialidade",
+    "about.confidentialityDesc": "Sua privacidade e tranquilidade são nossa prioridade",
+    "about.legal": "Informações Legais",
+    "about.nuit": "NUIT",
+    "about.nuel": "NUEL",
+    "about.alvara": "Alvará",
+    "about.inicioAtiv": "Data de Início de Atividade",
+    "about.sendMessage": "Enviar uma mensagem",
+
+    // Labels de Formulário
+    "form.name": "Nome",
+    "form.email": "E-mail",
+    "form.phone": "Telefone",
+    "form.serviceInterested": "Serviço de Interesse",
+    "form.selectService": "Selecione um serviço",
+    "form.message": "Mensagem",
+    "form.sending": "Enviando...",
+    "form.sendMessage": "Enviar Mensagem",
+    "form.questions": "Tem perguntas?",
+    "form.questionsDesc": "Adoraríamos ouvir você. Envie-nos uma mensagem e responderemos o mais breve possível.",
+    "form.thankyou": "Obrigado pela sua mensagem! Entraremos em contato em breve.",
   },
 }
 
