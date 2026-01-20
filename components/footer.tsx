@@ -15,7 +15,7 @@ export function Footer() {
           <div>
             <h3 className="text-[#d4af37] font-serif text-lg mb-4">CAMY - Wellness & Spa</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Your sanctuary of calm, beauty, and well-being. Dedicated to women's relaxation and self-care.
+              {t("footer.description")}
             </p>
           </div>
 
