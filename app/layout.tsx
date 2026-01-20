@@ -13,21 +13,14 @@ export const metadata: Metadata = {
     "Discover CAMY Wellness & Spa in Matola A, Mozambique. Indulge in professional spa services including nails, massages, yoga, and facial care. Your sanctuary of calm, beauty, and well-being.",
   keywords: ["spa", "wellness", "massage", "yoga", "nails", "Mozambique", "Matola"],
   icons: {
-    icon: "/Camy Spa Black Logo.png",
-    apple: "/Camy Spa Black Logo.png",
+    icon: "/Camy_Spa_Logo.png",
+    apple: "/Camy_Spa_Logo.png",
   },
   openGraph: {
-    title: "CAMY Wellness & Spa",
+    title: "CAMY - Wellness & Spa",
     description: "Your sanctuary of calm, beauty, and well-being",
-    url: "https://camy-wellness.com",
-    siteName: "CAMY Wellness & Spa",
-    images: [
-      {
-        url: "https://images.unsplash.com/photo-1600334089393-b8ca6b5d81a5?w=1200&h=630&fit=crop",
-        width: 1200,
-        height: 630,
-      },
-    ],
+    url: "https://camyspa.co.mz",
+    siteName: "CAMY - Wellness & Spa",
   },
 }
 
@@ -38,6 +31,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/Camy_Spa_Logo.png" type="image/png" />
+        <link rel="shortcut icon" href="/Camy_Spa_Logo.png" type="image/png" />
+        <meta itemProp="image" content="/Camy_Spa_Logo.png" />
+        <meta property="og:image" content="/Camy_Spa_Logo.png" />
+        <meta name="twitter:image" content="/Camy_Spa_Logo.png" />
+      </head>
       <body className={`font-sans antialiased`}>
         <LanguageProvider>{children}</LanguageProvider>
       </body>
