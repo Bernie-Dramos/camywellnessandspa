@@ -4,210 +4,186 @@ import { useState, useRef, useEffect } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { useLanguage } from "@/app/providers"
-import { ChevronDown } from "lucide-react"
+import { ServicesCategory } from "@/components/services-category"
 
-const serviceData = {
-  nails: {
+const mainCategories = [
+  {
+    key: "nailStudio",
     en: "Nail Studio",
     pt: "Estúdio de Unhas",
-    items: [
-      { service: "Manicure simples", price: "500 MZN" },
-      { service: "Manicure com pintura de verniz", price: "900 MZN" },
-      { service: "Manicure com pintura de verniz em gel", price: "700 MZN" },
-      { service: "Pintura de verniz em gel", price: "600 MZN" },
-      { service: "Pintura de verniz", price: "400 MZN" },
-      { service: "Overlay com pintura de verniz em gel", price: "900 MZN" },
-      { service: "Overlay com pó colorido", price: "800 MZN" },
-      { service: "Overlay com pintura de verniz", price: "650 MZN" },
-      { service: "Unhas artificiais e pintura de verniz", price: "1100 MZN" },
-      { service: "Unhas artificiais e pintura de verniz em gel", price: "900 MZN" },
-      { service: "Manutenção simples", price: "1100 MZN" },
-      { service: "Manutenção de overlay", price: "750 MZN" },
-      { service: "Manutenção com extras", price: "900 MZN" },
-    ],
-  },
-  pedicure: {
-    en: "Pedicure Services",
-    pt: "Tratamentos para os pés",
-    items: [
-      { service: "Pedicure simples", price: "900 MZN" },
-      { service: "Pedicure com pintura de verniz em gel", price: "750 MZN" },
-      { service: "Pedicure com pintura de verniz", price: "450 MZN" },
-      { service: "Pintura de verniz em gel", price: "300 MZN" },
-      { service: "Pintura de verniz", price: "500 MZN" },
-      { service: "Overlay com pintura de verniz em gel", price: "400 MZN" },
-      { service: "Overlay com pó colorido", price: "650 MZN" },
-      { service: "Overlay com pintura de verniz", price: "400 MZN" },
-      { service: "Manutenção de overlay", price: "500 MZN" },
-    ],
-  },
-  biosculpture: {
-    en: "BioSculpture",
-    pt: "BioSculpture",
-    items: [
-      { service: "Overlay", price: "1200 MZN" },
-      { service: "Overlay com francesinha", price: "1300 MZN" },
-      { service: "Francesinha ombré", price: "1350 MZN" },
-      { service: "Overlay e tips", price: "1600 MZN" },
-      { service: "Verniz Gemini", price: "550 MZN" },
-      { service: "Restauração de unha com seda (por unha)", price: "150 MZN" },
-      { service: "Restauração de tips com sculpture (por unha)", price: "100 MZN" },
-      { service: "Nail art (por unha)", price: "100 MZN" },
-      { service: "Remoção de gel BioSculpture", price: "250 MZN" },
-      { service: "Remoção de outros produtos", price: "500 MZN" },
-      { service: "Manutenção", price: "900 MZN" },
-    ],
-  },
-  combos: {
-    en: "Promotional Combos",
-    pt: "Combos Promocionais",
-    items: [
-      { service: "ESSENCIAL: Manicure e pedicure com pintura de verniz", price: "1400 MZN" },
-      { service: "HARMONIE: Overlay nas mãos e nos pés com pintura de verniz em gel", price: "1900 MZN" },
-      { service: "SERENITÉ: Unhas artificiais com pintura de verniz em gel nas mãos e nos pés", price: "1300 MZN" },
-      { service: "LUMINÉ: Manicure e pedicure com pintura de verniz em gel", price: "1700 MZN" },
-      { service: "CELESTIA: Unhas artificiais e pedicure com pintura de verniz em gel", price: "1600 MZN" },
-    ],
-  },
-  facials: {
-    en: "Facial Care",
-    pt: "Tratamento facial",
-    items: [
-      { service: "Limpeza express", price: "2200 MZN" },
-      { service: "Limpeza profunda", price: "1600 MZN" },
-    ],
-  },
-  bodycare: {
-    en: "Body Care & Massages",
-    pt: "Cuidado Corporal",
-    items: [
-      { service: "Massagem de relaxamento 30 Minutos", price: "900 MZN" },
-      { service: "Massagem de relaxamento 60 Minutos", price: "1600 MZN" },
-      { service: "Massagem de relaxamento com pedras quentes", price: "2600 MZN" },
-      { service: "Drenagem linfática (localizada) 30 minutos", price: "1600 MZN" },
-      { service: "Drenagem linfática 60 minutos", price: "1100 MZN" },
-      { service: "Esfoliação corporal", price: "2100 MZN" },
-      { service: "Drenagem linfática pós operatória", price: "2100 MZN" },
-    ],
-  },
-  waxing: {
-    en: "Waxing Services",
-    pt: "Depilação a cera",
-    items: [
-      { service: "Buço", price: "350 MZN" },
-      { service: "Queixo", price: "400 MZN" },
-      { service: "Sobrancelhas", price: "400 MZN" },
-      { service: "Axílas", price: "500 MZN" },
-      { service: "Meia perna", price: "900 MZN" },
-      { service: "Perna inteira", price: "700 MZN" },
-      { service: "Virilha", price: "700 MZN" },
-      { service: "Virilha completa", price: "1000 MZN" },
-      { service: "Glúteos", price: "600 MZN" },
-      { service: "Braços", price: "800 MZN" },
-      { service: "Nariz", price: "400 MZN" },
-      { service: "Orelha", price: "400 MZN" },
-    ],
-  },
-  makeup: {
-    en: "Makeup",
-    pt: "Maquilhagem",
-    items: [
-      { service: "Natural glam", price: "1700 MZN" },
-      { service: "Soft glam", price: "2100 MZN" },
-      { service: "Full glam", price: "2800 MZN" },
-      { service: "Makeup artística", price: "Sob consulta" },
-    ],
-  },
-  yoga: {
-    en: "Yoga Classes",
-    pt: "Yoga",
-    items: [
-      { service: "Aulas individuais", price: "1300 MZN" },
-      { service: "Pacote de 4 aulas", price: "4450 MZN" },
-      { service: "Pacote de 8 aulas", price: "7300 MZN" },
-    ],
-  },
-  bodyCombo: {
-    en: "Body Care Combos",
-    pt: "Combos Promocionais",
-    items: [
-      { service: "GLOW: Limpeza facial express e esfoliação corporal", price: "2900 MZN" },
+    image: "/unhas_piscina.jpg",
+    subcategories: [
       {
-        service: "REVIVE: Depilação nas axílas, meia perna e massagem de relaxamento com pedras quentes",
-        price: "3300 MZN",
+        en: "Manicure & Nails",
+        pt: "Manicure & Unhas",
+        items: [
+          { en: "Simple Manicure", pt: "Manicure simples", price: "500 MZN" },
+          { en: "Manicure with polish", pt: "Manicure com pintura de verniz", price: "900 MZN" },
+          { en: "Manicure with gel polish", pt: "Manicure com pintura de verniz em gel", price: "700 MZN" },
+          { en: "Gel polish", pt: "Pintura de verniz em gel", price: "600 MZN" },
+          { en: "Polish", pt: "Pintura de verniz", price: "400 MZN" },
+          { en: "Overlay with gel polish", pt: "Overlay com pintura de verniz em gel", price: "900 MZN" },
+          { en: "Overlay with color powder", pt: "Overlay com pó colorido", price: "800 MZN" },
+          { en: "Overlay with polish", pt: "Overlay com pintura de verniz", price: "650 MZN" },
+          { en: "Artificial nails with polish", pt: "Unhas artificiais e pintura de verniz", price: "1100 MZN" },
+          { en: "Artificial nails with gel polish", pt: "Unhas artificiais e pintura de verniz em gel", price: "900 MZN" },
+          { en: "Simple maintenance", pt: "Manutenção simples", price: "1100 MZN" },
+          { en: "Overlay maintenance", pt: "Manutenção de overlay", price: "750 MZN" },
+          { en: "Maintenance with extras", pt: "Manutenção com extras", price: "900 MZN" },
+        ],
       },
       {
-        service: "DETOX: Limpeza facial profunda, esfoliação corporal e drenagem linfática de 30 minutos",
-        price: "4300 MZN",
+        en: "Pedicure",
+        pt: "Pedicure",
+        items: [
+          { en: "Simple Pedicure", pt: "Pedicure simples", price: "900 MZN" },
+          { en: "Pedicure with gel polish", pt: "Pedicure com pintura de verniz em gel", price: "750 MZN" },
+          { en: "Pedicure with polish", pt: "Pedicure com pintura de verniz", price: "450 MZN" },
+          { en: "Gel polish", pt: "Pintura de verniz em gel", price: "300 MZN" },
+          { en: "Polish", pt: "Pintura de verniz", price: "500 MZN" },
+          { en: "Overlay with gel polish", pt: "Overlay com pintura de verniz em gel", price: "400 MZN" },
+          { en: "Overlay with color powder", pt: "Overlay com pó colorido", price: "650 MZN" },
+          { en: "Overlay with polish", pt: "Overlay com pintura de verniz", price: "400 MZN" },
+          { en: "Overlay maintenance", pt: "Manutenção de overlay", price: "500 MZN" },
+        ],
+      },
+      {
+        en: "BioSculpture",
+        pt: "BioSculpture",
+        items: [
+          { en: "Overlay", pt: "Overlay", price: "1200 MZN" },
+          { en: "Overlay with French", pt: "Overlay com francesinha", price: "1300 MZN" },
+          { en: "French ombré", pt: "Francesinha ombré", price: "1350 MZN" },
+          { en: "Overlay and tips", pt: "Overlay e tips", price: "1600 MZN" },
+          { en: "Gemini polish", pt: "Verniz Gemini", price: "550 MZN" },
+          { en: "Silk nail repair (per nail)", pt: "Restauração de unha com seda (por unha)", price: "150 MZN" },
+          { en: "Tips repair with sculpture (per nail)", pt: "Restauração de tips com sculpture (por unha)", price: "100 MZN" },
+          { en: "Nail art (per nail)", pt: "Nail art (por unha)", price: "100 MZN" },
+          { en: "BioSculpture gel removal", pt: "Remoção de gel BioSculpture", price: "250 MZN" },
+          { en: "Other product removal", pt: "Remoção de outros produtos", price: "500 MZN" },
+          { en: "Maintenance", pt: "Manutenção", price: "900 MZN" },
+        ],
+      },
+      {
+        en: "Promotional Combos",
+        pt: "Combos Promocionais",
+        items: [
+          { en: "ESSENCIAL: Manicure and pedicure with polish", pt: "ESSENCIAL: Manicure e pedicure com pintura de verniz", price: "1400 MZN" },
+          { en: "HARMONIE: Overlay on hands and feet with gel polish", pt: "HARMONIE: Overlay nas mãos e nos pés com pintura de verniz em gel", price: "1900 MZN" },
+          { en: "SERENITÉ: Artificial nails with gel polish on hands and feet", pt: "SERENITÉ: Unhas artificiais com pintura de verniz em gel nas mãos e nos pés", price: "1300 MZN" },
+          { en: "LUMINÉ: Manicure and pedicure with gel polish", pt: "LUMINÉ: Manicure e pedicure com pintura de verniz em gel", price: "1700 MZN" },
+          { en: "CELESTIA: Artificial nails and pedicure with gel polish", pt: "CELESTIA: Unhas artificiais e pedicure com pintura de verniz em gel", price: "1600 MZN" },
+        ],
       },
     ],
   },
-}
+  {
+    key: "bodyCare",
+    en: "Body Care",
+    pt: "Cuidados Corporais",
+    image: "/face-care.jpg",
+    subcategories: [
+      {
+        en: "Massages & Body Treatments",
+        pt: "Massagens & Tratamentos Corporais",
+        items: [
+          { en: "30-min Relaxation Massage", pt: "Massagem de relaxamento 30 Minutos", price: "900 MZN" },
+          { en: "60-min Relaxation Massage", pt: "Massagem de relaxamento 60 Minutos", price: "1600 MZN" },
+          { en: "Hot stone relaxation massage", pt: "Massagem de relaxamento com pedras quentes", price: "2600 MZN" },
+          { en: "Localized lymphatic drainage 30 min", pt: "Drenagem linfática (localizada) 30 minutos", price: "1600 MZN" },
+          { en: "Lymphatic drainage 60 min", pt: "Drenagem linfática 60 minutos", price: "1100 MZN" },
+          { en: "Body exfoliation", pt: "Esfoliação corporal", price: "2100 MZN" },
+          { en: "Post-op lymphatic drainage", pt: "Drenagem linfática pós operatória", price: "2100 MZN" },
+        ],
+      },
+      {
+        en: "Waxing",
+        pt: "Depilação a cera",
+        items: [
+          { en: "Upper lip", pt: "Buço", price: "350 MZN" },
+          { en: "Chin", pt: "Queixo", price: "400 MZN" },
+          { en: "Eyebrows", pt: "Sobrancelhas", price: "400 MZN" },
+          { en: "Armpits", pt: "Axílas", price: "500 MZN" },
+          { en: "Half leg", pt: "Meia perna", price: "900 MZN" },
+          { en: "Full leg", pt: "Perna inteira", price: "700 MZN" },
+          { en: "Bikini", pt: "Virilha", price: "700 MZN" },
+          { en: "Full bikini", pt: "Virilha completa", price: "1000 MZN" },
+          { en: "Glutes", pt: "Glúteos", price: "600 MZN" },
+          { en: "Arms", pt: "Braços", price: "800 MZN" },
+          { en: "Nose", pt: "Nariz", price: "400 MZN" },
+          { en: "Ear", pt: "Orelha", price: "400 MZN" },
+        ],
+      },
+      {
+        en: "Body Care Combos",
+        pt: "Combos de Cuidado Corporal",
+        items: [
+          { en: "GLOW: Express facial cleansing and body exfoliation", pt: "GLOW: Limpeza facial express e esfoliação corporal", price: "2900 MZN" },
+          { en: "REVIVE: Armpit, half leg waxing and hot stone massage", pt: "REVIVE: Depilação nas axílas, meia perna e massagem de relaxamento com pedras quentes", price: "3300 MZN" },
+          { en: "DETOX: Deep facial cleansing, body exfoliation and 30-min lymphatic drainage", pt: "DETOX: Limpeza facial profunda, esfoliação corporal e drenagem linfática de 30 minutos", price: "4300 MZN" },
+        ],
+      },
+    ],
+  },
+  {
+    key: "wellbeing",
+    en: "Wellbeing & Alignment",
+    pt: "Bem-Estar e Alinhamento",
+    image: "/yoga-1.jpg",
+    subcategories: [
+      {
+        en: "Yoga Classes",
+        pt: "Aulas de Yoga",
+        items: [
+          { en: "Individual classes", pt: "Aulas individuais", price: "1300 MZN" },
+          { en: "4-class package", pt: "Pacote de 4 aulas", price: "4450 MZN" },
+          { en: "8-class package", pt: "Pacote de 8 aulas", price: "7300 MZN" },
+        ],
+      },
+    ],
+  },
+  {
+    key: "beauty",
+    en: "Beauty Treatments",
+    pt: "Tratamentos de Beleza",
+    image: "/makeup-1.jpg",
+    subcategories: [
+      {
+        en: "Facial Care",
+        pt: "Tratamento facial",
+        items: [
+          { en: "Express cleansing", pt: "Limpeza express", price: "2200 MZN" },
+          { en: "Deep cleansing", pt: "Limpeza profunda", price: "1600 MZN" },
+        ],
+      },
+      {
+        en: "Makeup",
+        pt: "Maquilhagem",
+        items: [
+          { en: "Natural glam", pt: "Natural glam", price: "1700 MZN" },
+          { en: "Soft glam", pt: "Soft glam", price: "2100 MZN" },
+          { en: "Full glam", pt: "Full glam", price: "2800 MZN" },
+          { en: "Artistic makeup", pt: "Makeup artística", price: "Sob consulta" },
+        ],
+      },
+    ],
+  },
+]
 
-type ServiceKey = keyof typeof serviceData
 
-function ServiceCategory({
-  categoryKey,
-  isOpen,
-  onToggle,
-}: { categoryKey: ServiceKey; isOpen: boolean; onToggle: () => void }) {
-  const { language } = useLanguage()
-  const data = serviceData[categoryKey]
-  const title = language === "en" ? data.en : data.pt
 
-  return (
-    <div className="border-b border-gray-200">
-      <button
-        onClick={onToggle}
-        className="w-full px-6 py-4 flex items-center justify-between bg-white hover:bg-gray-50 transition-colors"
-      >
-        <h3 className="text-lg font-serif font-semibold text-[#1a3c34]">{title}</h3>
-        <ChevronDown
-          className={`w-5 h-5 text-[#d4af37] transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
-        />
-      </button>
 
-      {isOpen && (
-        <div className="px-6 py-4 bg-gray-50">
-          <div className="space-y-3">
-            {data.items.map((item, idx) => (
-              <div
-                key={idx}
-                className="flex justify-between items-start gap-4 pb-3 border-b border-gray-200 last:border-b-0"
-              >
-                <span className="text-gray-700 flex-1">{item.service}</span>
-                <span className="text-[#d4af37] font-semibold whitespace-nowrap">{item.price}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-    </div>
-  )
-}
 
 export default function Services() {
   const videoRef = useRef<HTMLVideoElement>(null)
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.5
+      videoRef.current.playbackRate = 0.75
     }
   }, [])
   const { language } = useLanguage()
-  const [openCategories, setOpenCategories] = useState<Record<ServiceKey, boolean>>({
-    nails: true,
-    pedicure: false,
-    biosculpture: false,
-    combos: false,
-    facials: false,
-    bodycare: false,
-    waxing: false,
-    makeup: false,
-    yoga: false,
-    bodyCombo: false,
-  })
-
-  const toggleCategory = (key: ServiceKey) => {
+  const [openCategories, setOpenCategories] = useState<Record<string, boolean>>({})
+  const toggleCategory = (key: string) => {
     setOpenCategories((prev) => ({
       ...prev,
       [key]: !prev[key],
@@ -245,27 +221,17 @@ export default function Services() {
       {/* Services List */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
-            <p className="text-center text-gray-600 text-lg mb-4">
-              {language === "en"
-                ? "Register each session and receive a gift upon completion"
-                : "Registe cada sessão e ao completar receberá um mimo"}
-            </p>
-            <p className="text-center text-gray-600 text-sm">
-              {language === "en"
-                ? "Prices subject to change. Nail art may incur extra fees."
-                : "Preços sujeitos a alteração. Nail art pode ter custo adicional."}
-            </p>
-          </div>
+          {/* Info message moved to bottom of page */}
 
-          {/* Categories */}
-          <div className="rounded-lg shadow-md overflow-hidden border border-gray-200">
-            {(Object.keys(serviceData) as ServiceKey[]).map((key) => (
-              <ServiceCategory
-                key={key}
-                categoryKey={key}
-                isOpen={openCategories[key]}
-                onToggle={() => toggleCategory(key)}
+          {/* Main Categories as images with names below, animated on hover */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            {mainCategories.map((cat) => (
+              <ServicesCategory
+                key={cat.key}
+                category={cat}
+                isOpen={!!openCategories[cat.key]}
+                onToggle={() => toggleCategory(cat.key)}
+                language={language}
               />
             ))}
           </div>
@@ -290,6 +256,20 @@ export default function Services() {
                 {language === "en" ? "Follow us @camywellnessspa" : "Siga-nos @camywellnessspa"}
               </p>
             </div>
+          </div>
+
+          {/* Info message moved here */}
+          <div className="mt-8 mb-2">
+            <p className="text-center text-gray-600 text-lg mb-2">
+              {language === "en"
+                ? "Register each session and receive a gift upon completion"
+                : "Registe cada sessão e ao completar receberá um mimo"}
+            </p>
+            <p className="text-center text-gray-600 text-sm">
+              {language === "en"
+                ? "Prices subject to change. Nail art may incur extra fees."
+                : "Preços sujeitos a alteração. Nail art pode ter custo adicional."}
+            </p>
           </div>
         </div>
       </section>
