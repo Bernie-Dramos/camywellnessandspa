@@ -13,7 +13,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* About */}
           <div>
-            <h3 className="text-[#d4af37] font-serif text-lg mb-4">CAMY</h3>
+            <h3 className="text-[#d4af37] font-serif text-lg mb-4">CAMY - Wellness & Spa</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               Your sanctuary of calm, beauty, and well-being. Dedicated to women's relaxation and self-care.
             </p>

@@ -23,7 +23,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <Image
-              src="/Camy Spa Logo.png"
+              src="/Camy_Spa_Logo.png"
               alt="CAMY Wellness & Spa Logo"
               width={48}
               height={48}
@@ -51,7 +51,7 @@ export function Header() {
             <div className="flex items-center gap-2 border-r border-gray-200 pr-4">
               <button
                 onClick={() => setLanguage("en")}
-                className={`text-sm font-medium transition-colors ${
+                className={`lang-toggle text-sm font-medium transition-colors ${
                   language === "en" ? "text-[#d4af37]" : "text-gray-500 hover:text-gray-700"
                 }`}
               >
@@ -60,7 +60,7 @@ export function Header() {
               <span className="text-gray-300">/</span>
               <button
                 onClick={() => setLanguage("pt")}
-                className={`text-sm font-medium transition-colors ${
+                className={`lang-toggle text-sm font-medium transition-colors ${
                   language === "pt" ? "text-[#d4af37]" : "text-gray-500 hover:text-gray-700"
                 }`}
               >
