@@ -65,6 +65,7 @@ const translations = {
     "footer.monFriHours": "9:00 AM - 7:00 PM",
     "footer.satHours": "9:00 AM - 6:00 PM",
     "footer.sunHours": "24hr Pre-Booking only",
+    "footer.description": "Your sanctuary of calm, beauty, and well-being. Dedicated to women's relaxation and self-care.",
 
     // Home Page
     "home.testimonials": "What Our Clients Say",
@@ -153,6 +154,7 @@ const translations = {
     "footer.monFriHours": "9:00 - 19:00",
     "footer.satHours": "9:00 - 18:00",
     "footer.sunHours": "Apenas por pré-marcação de 24h",
+    "footer.description": "O seu santuário de calma, beleza e bem-estar. Dedicado ao relaxamento e ao cuidado das mulheres.",
 
     // Página Inicial
     "home.testimonials": "O Que Nossos Clientes Dizem",
