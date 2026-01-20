@@ -18,7 +18,8 @@ export function ClientImage({ src, alt, width, height, className = "", priority 
   // Use placeholder for Unsplash images if it's an external image
   const imageSrc = src.includes("unsplash") || src.includes("http") ? src : `/images/${src}`
 
-  if (src.includes("http")) {
+    if (src.includes("http")) {
+        loading="lazy"
     return (
       <img
         src={imageSrc || "/placeholder.svg"}
@@ -27,6 +28,7 @@ export function ClientImage({ src, alt, width, height, className = "", priority 
         onLoad={() => setIsLoading(false)}
         width={width}
         height={height}
+        loading="lazy"
       />
     )
   }
@@ -40,6 +42,7 @@ export function ClientImage({ src, alt, width, height, className = "", priority 
       priority={priority}
       className={className}
       quality={85}
+      loading="lazy"
     />
   )
 }
