@@ -97,6 +97,14 @@ const mainCategories = [
         ],
       },
       {
+        en: "Facial Care",
+        pt: "Tratamento facial",
+        items: [
+          { en: "Express cleansing", pt: "Limpeza express", price: "2200 MZN" },
+          { en: "Deep cleansing", pt: "Limpeza profunda", price: "1600 MZN" },
+        ],
+      },
+      {
         en: "Waxing",
         pt: "Depilação a cera",
         items: [
@@ -148,14 +156,6 @@ const mainCategories = [
     pt: "Tratamentos de Beleza",
     image: "/makeup-1.jpg",
     subcategories: [
-      {
-        en: "Facial Care",
-        pt: "Tratamento facial",
-        items: [
-          { en: "Express cleansing", pt: "Limpeza express", price: "2200 MZN" },
-          { en: "Deep cleansing", pt: "Limpeza profunda", price: "1600 MZN" },
-        ],
-      },
       {
         en: "Makeup",
         pt: "Maquilhagem",
