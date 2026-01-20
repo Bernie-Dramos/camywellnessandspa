@@ -1,5 +1,7 @@
+
 "use client"
 
+import { useRef, useEffect } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { useLanguage } from "@/app/providers"
