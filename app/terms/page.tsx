@@ -1,3 +1,4 @@
+
 "use client"
 
 import { useState } from "react"
@@ -246,8 +247,29 @@ export default function Terms() {
             ))}
           </div>
 
-          {/* Summary */}
+          {/* Legal Information */}
           <div className="mt-12 bg-gradient-to-r from-[#f8f5f0] to-white p-8 rounded-lg border border-[#d4af37]/30">
+            <h3 className="text-2xl font-serif font-semibold text-[#1a3c34] mb-4">
+              {language === "en" ? "Legal Information" : "Informação Legal"}
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+              <div className="bg-linear-to-br from-[#f8f5f0] to-white p-6 rounded-lg border border-[#d4af37]/30">
+                <h4 className="text-lg font-semibold text-[#1a3c34] mb-2">NUIT</h4>
+                <p className="text-3xl font-serif text-[#d4af37]">402002026</p>
+              </div>
+              <div className="bg-linear-to-br from-[#f8f5f0] to-white p-6 rounded-lg border border-[#d4af37]/30">
+                <h4 className="text-lg font-semibold text-[#1a3c34] mb-2">NUEL</h4>
+                <p className="text-3xl font-serif text-[#d4af37]">105008783</p>
+              </div>
+              <div className="bg-linear-to-br from-[#f8f5f0] to-white p-6 rounded-lg border border-[#d4af37]/30">
+                <h4 className="text-lg font-semibold text-[#1a3c34] mb-2">Alvará</h4>
+                <p className="text-3xl font-serif text-[#d4af37]">279/10/01/2025</p>
+              </div>
+              <div className="bg-linear-to-br from-[#f8f5f0] to-white p-6 rounded-lg border border-[#d4af37]/30">
+                <h4 className="text-lg font-semibold text-[#1a3c34] mb-2">Início de Atividade</h4>
+                <p className="text-3xl font-serif text-[#d4af37]">01/10/2025</p>
+              </div>
+            </div>
             <h3 className="text-2xl font-serif font-semibold text-[#1a3c34] mb-4">
               {language === "en" ? "Summary" : "Resumo"}
             </h3>

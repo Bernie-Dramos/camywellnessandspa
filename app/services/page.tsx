@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { useLanguage } from "@/app/providers"
@@ -187,6 +187,12 @@ function ServiceCategory({
 }
 
 export default function Services() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.5
+    }
+  }, [])
   const { language } = useLanguage()
   const [openCategories, setOpenCategories] = useState<Record<ServiceKey, boolean>>({
     nails: true,
@@ -213,7 +219,21 @@ export default function Services() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-80 flex items-center justify-center overflow-hidden bg-gradient-to-r from-[#1a3c34] to-[#2d5a50]">
+      <section className="relative h-208 flex items-center justify-center overflow-hidden">
+        {/* Background Video */}
+        <video
+          ref={videoRef}
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        >
+          <source src="/sala.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* Overlay removed as requested */}
         <div className="relative z-10 text-center text-white">
           <h1 className="text-5xl md:text-6xl font-serif font-light mb-2">
             {language === "en" ? "Our Services" : "Os Nossos Serviços"}
@@ -251,18 +271,25 @@ export default function Services() {
           </div>
 
           {/* Loyalty Card Info */}
-          <div className="mt-12 bg-gradient-to-r from-[#f8f5f0] to-white p-8 rounded-lg border border-[#d4af37]/30">
-            <h3 className="text-2xl font-serif font-semibold text-[#1a3c34] mb-4">
-              {language === "en" ? "Loyalty Rewards" : "Recompensas de Fidelidade"}
-            </h3>
-            <p className="text-gray-700 mb-4">
-              {language === "en"
-                ? "Earn rewards with every visit! Register each session and receive exclusive gifts upon completion. Enjoy our 25% loyalty discount on selected services."
-                : "Ganhe recompensas a cada visita! Registe cada sessão e receba presentes exclusivos ao completar. Aproveite nosso desconto de fidelidade de 25% em serviços selecionados."}
-            </p>
-            <p className="text-[#d4af37] font-semibold">
-              {language === "en" ? "Follow us @camywellnessspa" : "Siga-nos @camywellnessspa"}
-            </p>
+          <div className="mt-12 bg-linear-to-r from-[#f8f5f0] to-white p-8 rounded-lg border border-[#d4af37]/30 flex flex-col md:flex-row items-center gap-8">
+            <img
+              src="/Loyalty%20Card.png"
+              alt={language === "en" ? "Loyalty Card" : "Cartão de Fidelidade"}
+              className="w-70 h-auto rounded-lg shadow-md border border-[#d4af37]/40 mb-6 md:mb-0"
+            />
+            <div>
+              <h3 className="text-2xl font-serif font-semibold text-[#1a3c34] mb-4">
+                {language === "en" ? "Loyalty Rewards" : "Recompensas de Fidelidade"}
+              </h3>
+              <p className="text-gray-700 mb-4">
+                {language === "en"
+                  ? "Earn rewards with every visit! Register each session and receive exclusive gifts upon completion. Enjoy our 25% loyalty discount on selected services."
+                  : "Ganhe recompensas a cada visita! Registe cada sessão e receba presentes exclusivos ao completar. Aproveite nosso desconto de fidelidade de 25% em serviços selecionados."}
+              </p>
+              <p className="text-[#d4af37] font-semibold">
+                {language === "en" ? "Follow us @camywellnessspa" : "Siga-nos @camywellnessspa"}
+              </p>
+            </div>
           </div>
         </div>
       </section>
