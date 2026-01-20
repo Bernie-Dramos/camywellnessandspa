@@ -29,6 +29,7 @@ export function ServicesCategory({
             height={220}
             className="object-cover aspect-[1/1]"
             style={{ borderRadius: "50%" }}
+            loading="lazy"
           />
         </span>
         <span
