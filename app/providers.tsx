@@ -23,9 +23,10 @@ const translations = {
     "nav.book": "Book Now",
 
     // Hero
-    "hero.title": "CAMY Wellness & Spa",
+    "hero.title1": "CAMY",
+    "hero.title2": "Wellness & Spa",
     "hero.tagline": "Your sanctuary of calm, beauty, and well-being",
-    "hero.subtitle": "Dedicated to women's relaxation and self-care in Matola A, Mozambique",
+    "hero.subtitle": "Dedicated to women's relaxation and self-care in Matola",
     "hero.cta1": "Book Now",
     "hero.cta2": "Discover Services",
 
@@ -40,7 +41,7 @@ const translations = {
     "services.learnmore": "Learn More",
 
     // About
-    "about.title": "About CAMY Wellness & Spa",
+    "about.title": "About Us",
     "about.commitment": "Our Commitment",
     "about.commitmentText":
       "CAMY Wellness and Spa is dedicated to providing a calm, safe, and restorative space for women to relax and focus on their well-being. All treatments are carried out with professionalism, care and confidentiality.",
@@ -61,7 +62,7 @@ const translations = {
     "footer.monday": "Monday - Friday",
     "footer.saturday": "Saturday",
     "footer.sunday": "Sunday",
-    "footer.monFriHours": "9:00 AM - 6:00 PM",
+    "footer.monFriHours": "9:00 AM - 7:00 PM",
     "footer.satHours": "10:00 AM - 5:00 PM",
     "footer.sunHours": "24hr Pre-Booking only",
 
@@ -122,9 +123,10 @@ const translations = {
     "nav.book": "Marque Agora",
 
     // Hero
-    "hero.title": "CAMY Wellness & Spa",
+    "hero.title1": "CAMY",
+    "hero.title2": "Wellness & Spa",
     "hero.tagline": "O seu santuário de calma, beleza e bem-estar",
-    "hero.subtitle": "Dedicado ao relaxamento e autocuidado das mulheres em Matola A, Moçambique",
+    "hero.subtitle": "Dedicado ao relaxamento e o cuidado das mulheres na Matola",
     "hero.cta1": "Marque Agora",
     "hero.cta2": "Descubra Serviços",
 
@@ -139,7 +141,7 @@ const translations = {
     "services.learnmore": "Saber Mais",
 
     // Sobre
-    "about.title": "Sobre a CAMY Wellness & Spa",
+    "about.title": "Sobre Nos",
     "about.commitment": "O Nosso Compromisso",
     "about.commitmentText":
       "A Camy Wellness and Spa dedica-se a proporcionar um espaço calmo, seguro e restaurador para que as mulheres possam relaxar e focar no seu bem-estar. Todos os tratamentos são realizados com profissionalismo, cuidado e confidencialidade.",
@@ -160,9 +162,9 @@ const translations = {
     "footer.monday": "Segunda - Sexta",
     "footer.saturday": "Sábado",
     "footer.sunday": "Domingo",
-    "footer.monFriHours": "9:00 - 18:00",
+    "footer.monFriHours": "9:00 - 19:00",
     "footer.satHours": "10:00 - 17:00",
-    "footer.sunHours": "Apenas pré-marcação 24h",
+    "footer.sunHours": "Apenas por pré-marcação de 24h",
 
     // Página Inicial
     "home.testimonials": "O Que Nossos Clientes Dizem",
