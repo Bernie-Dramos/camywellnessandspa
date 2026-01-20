@@ -1,3 +1,21 @@
+/* Language toggle pointer and scale */
+.lang-toggle {
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.lang-toggle:hover {
+  transform: scale(1.08);
+  box-shadow: 0 2px 8px 0 rgba(212, 175, 55, 0.10);
+}
+/* Universal button hover effect for pointer and scale */
+button, a, .btn, .button {
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+button:hover, a:hover, .btn:hover, .button:hover {
+  transform: scale(1.04);
+  box-shadow: 0 2px 8px 0 rgba(212, 175, 55, 0.10);
+}
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
