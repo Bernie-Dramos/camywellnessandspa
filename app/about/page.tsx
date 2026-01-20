@@ -12,7 +12,7 @@ export default function About() {
   const videoRef = useRef<HTMLVideoElement>(null)
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.5
+      videoRef.current.playbackRate = 1
     }
   }, [])
 
@@ -64,7 +64,7 @@ export default function About() {
           <div className="mb-12">
             <h2 className="text-3xl md:text-4xl font-serif font-light mb-10 text-center text-[#d4af37]">{t("about.values")}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="p-6 border-l-4 border-[#d4af37] bg-[#f8f5f0]">
+              <div className="p-6 border-l-4 border-[#d4af37]">
                 <h3 className="text-xl font-serif font-semibold text-[#1a3c34] mb-2">
                   {t("about.value1Title")}
                 </h3>
@@ -72,7 +72,7 @@ export default function About() {
                   {t("about.value1Desc")}
                 </p>
               </div>
-              <div className="p-6 border-l-4 border-[#d4af37] bg-[#f8f5f0]">
+              <div className="p-6 border-l-4 border-[#d4af37]">
                 <h3 className="text-xl font-serif font-semibold text-[#1a3c34] mb-2">
                   {t("about.value2Title")}
                 </h3>
@@ -80,7 +80,7 @@ export default function About() {
                   {t("about.value2Desc")}
                 </p>
               </div>
-              <div className="p-6 border-l-4 border-[#d4af37] bg-[#f8f5f0]">
+              <div className="p-6 border-l-4 border-[#d4af37]">
                 <h3 className="text-xl font-serif font-semibold text-[#1a3c34] mb-2">
                   {t("about.value3Title")}
                 </h3>
@@ -88,7 +88,7 @@ export default function About() {
                   {t("about.value3Desc")}
                 </p>
               </div>
-              <div className="p-6 border-l-4 border-[#d4af37] bg-[#f8f5f0]">
+              <div className="p-6 border-l-4 border-[#d4af37]">
                 <h3 className="text-xl font-serif font-semibold text-[#1a3c34] mb-2">
                   {t("about.value4Title")}
                 </h3>
