@@ -63,7 +63,7 @@ const translations = {
     "footer.saturday": "Saturday",
     "footer.sunday": "Sunday",
     "footer.monFriHours": "9:00 AM - 7:00 PM",
-    "footer.satHours": "10:00 AM - 5:00 PM",
+    "footer.satHours": "9:00 AM - 6:00 PM",
     "footer.sunHours": "24hr Pre-Booking only",
 
     // Home Page
@@ -101,18 +101,6 @@ const translations = {
     "about.inicioAtiv": "Business Start Date",
     "about.sendMessage": "Send a message",
 
-    // Form Labels
-    "form.name": "Name",
-    "form.email": "Email",
-    "form.phone": "Phone",
-    "form.serviceInterested": "Service Interested In",
-    "form.selectService": "Select a service",
-    "form.message": "Message",
-    "form.sending": "Sending...",
-    "form.sendMessage": "Send Message",
-    "form.questions": "Have questions?",
-    "form.questionsDesc": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
-    "form.thankyou": "Thank you for your message! We'll be in touch soon.",
   },
   pt: {
     // Navegação
@@ -163,7 +151,7 @@ const translations = {
     "footer.saturday": "Sábado",
     "footer.sunday": "Domingo",
     "footer.monFriHours": "9:00 - 19:00",
-    "footer.satHours": "10:00 - 17:00",
+    "footer.satHours": "9:00 - 18:00",
     "footer.sunHours": "Apenas por pré-marcação de 24h",
 
     // Página Inicial
@@ -201,18 +189,6 @@ const translations = {
     "about.inicioAtiv": "Data de Início de Atividade",
     "about.sendMessage": "Enviar uma mensagem",
 
-    // Labels de Formulário
-    "form.name": "Nome",
-    "form.email": "E-mail",
-    "form.phone": "Telefone",
-    "form.serviceInterested": "Serviço de Interesse",
-    "form.selectService": "Selecione um serviço",
-    "form.message": "Mensagem",
-    "form.sending": "Enviando...",
-    "form.sendMessage": "Enviar Mensagem",
-    "form.questions": "Tem perguntas?",
-    "form.questionsDesc": "Adoraríamos ouvir você. Envie-nos uma mensagem e responderemos o mais breve possível.",
-    "form.thankyou": "Obrigado pela sua mensagem! Entraremos em contato em breve.",
   },
 }
 
