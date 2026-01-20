@@ -7,15 +7,22 @@ import { MapPin, Phone, Mail, Instagram } from "lucide-react"
 
 export default function About() {
   const { language, t } = useLanguage()
+  const videoRef = useRef<HTMLVideoElement>(null)
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.5
+    }
+  }, [])
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-150 flex items-center justify-center overflow-hidden bg-linear-to-r from-[#1a3c34] to-[#2d5a50]">
+      <section className="relative h-208 flex items-center justify-center overflow-hidden bg-linear-to-r from-[#1a3c34] to-[#2d5a50]">
         {/* Background Video */}
         <video
+          ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover"
           autoPlay
           muted
@@ -93,7 +100,7 @@ export default function About() {
       </section>
 
       {/* Our Commitment */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-[#f8f5f0] to-white">
+      <section className="py-16 md:py-24 bg-linear-to-b from-[#f8f5f0] to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-serif font-light mb-8 text-[#1a3c34]">{t("about.commitment")}</h2>
@@ -146,7 +153,7 @@ export default function About() {
       </section>
 
       {/* Location & Contact Info */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-[#f8f5f0] to-white">
+      <section className="py-16 md:py-24 bg-linear-to-b from-[#f8f5f0] to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-serif font-light mb-12 text-center text-[#1a3c34]">
             {t("about.contact")}
@@ -170,7 +177,7 @@ export default function About() {
             <div className="space-y-8">
               {/* Address */}
               <div className="flex gap-4">
-                <MapPin className="w-6 h-6 text-[#d4af37] flex-shrink-0 mt-1" />
+                <MapPin className="w-6 h-6 text-[#d4af37] shrink-0 mt-1" />
                 <div>
                   <h3 className="font-serif font-semibold text-[#1a3c34] mb-2">{t("about.location")}</h3>
                   <p className="text-gray-600">{t("about.address")}</p>
@@ -180,7 +187,7 @@ export default function About() {
 
               {/* Phone */}
               <div className="flex gap-4">
-                <Phone className="w-6 h-6 text-[#d4af37] flex-shrink-0 mt-1" />
+                <Phone className="w-6 h-6 text-[#d4af37] shrink-0 mt-1" />
                 <div>
                   <h3 className="font-serif font-semibold text-[#1a3c34] mb-2">{t("about.phone")}</h3>
                   <ul className="space-y-1 text-gray-600">
@@ -205,7 +212,7 @@ export default function About() {
 
               {/* Social */}
               <div className="flex gap-4">
-                <Instagram className="w-6 h-6 text-[#d4af37] flex-shrink-0 mt-1" />
+                <Instagram className="w-6 h-6 text-[#d4af37] shrink-0 mt-1" />
                 <div>
                   <h3 className="font-serif font-semibold text-[#1a3c34] mb-2">{t("about.instagram")}</h3>
                   <a
@@ -221,7 +228,7 @@ export default function About() {
 
               {/* WhatsApp */}
               <div className="flex gap-4">
-                <Mail className="w-6 h-6 text-[#d4af37] flex-shrink-0 mt-1" />
+                <Mail className="w-6 h-6 text-[#d4af37] shrink-0 mt-1" />
                 <div>
                   <h3 className="font-serif font-semibold text-[#1a3c34] mb-2">{t("about.whatsapp")}</h3>
                   <a
@@ -239,36 +246,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Legal Information */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-serif font-light mb-12 text-center text-[#1a3c34]">
-            {t("about.legal")}
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-gradient-to-br from-[#f8f5f0] to-white p-6 rounded-lg border border-[#d4af37]/30">
-              <h3 className="text-lg font-semibold text-[#1a3c34] mb-2">{t("about.nuit")}</h3>
-              <p className="text-3xl font-serif text-[#d4af37]">402002026</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-[#f8f5f0] to-white p-6 rounded-lg border border-[#d4af37]/30">
-              <h3 className="text-lg font-semibold text-[#1a3c34] mb-2">{t("about.nuel")}</h3>
-              <p className="text-3xl font-serif text-[#d4af37]">105008783</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-[#f8f5f0] to-white p-6 rounded-lg border border-[#d4af37]/30">
-              <h3 className="text-lg font-semibold text-[#1a3c34] mb-2">{t("about.alvara")}</h3>
-              <p className="text-3xl font-serif text-[#d4af37]">279/10/01/2025</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-[#f8f5f0] to-white p-6 rounded-lg border border-[#d4af37]/30">
-              <h3 className="text-lg font-semibold text-[#1a3c34] mb-2">{t("about.inicioAtiv")}</h3>
-              <p className="text-3xl font-serif text-[#d4af37]">01/10/2025</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <Footer />
     </div>
