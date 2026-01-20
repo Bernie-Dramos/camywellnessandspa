@@ -104,23 +104,16 @@ export default function Home() {
 
         {/* Content */}
         <div className="relative z-10 text-center text-white max-w-3xl mx-auto px-4">
-          <h1 className="text-5xl md:text-7xl font-serif font-light mb-4 text-balance">{t("hero.title")}</h1>
+          <h1 className="text-5xl md:text-7xl font-serif font-light mb-0 text-balance">{t("hero.title1")}</h1>
+          <h2 className="text-3xl md:text-5xl font-serif font-light mb-4 text-balance">{t("hero.title2")}</h2>
           <p className="text-xl md:text-2xl font-light mb-8 text-balance">{t("hero.tagline")}</p>
           <p className="text-lg md:text-lg font-light mb-10 text-gray-200">{t("hero.subtitle")}</p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://wa.me/258841921846"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 bg-[#d4af37] text-white font-medium rounded hover:bg-[#c9a63f] transition-colors text-lg"
-            >
-              {t("hero.cta1")}
-            </a>
+          {/* CTA Button: Discover Services only, with gold gradient */}
+          <div className="flex justify-center">
             <Link
               href="/services"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white/20 backdrop-blur-sm text-white font-medium rounded hover:bg-white/30 transition-colors text-lg border border-white/50"
+              className="inline-flex items-center justify-center px-8 py-4 font-medium rounded text-lg text-white bg-gradient-to-r from-[#d4af37] via-[#e6c75a] to-[#f8e9a1] shadow-lg border-0 hover:from-[#c9a63f] hover:to-[#f8e9a1] hover:brightness-105 transition-all"
             >
               {t("hero.cta2")}
             </Link>
