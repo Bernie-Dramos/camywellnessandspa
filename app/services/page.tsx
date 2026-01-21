@@ -14,20 +14,20 @@ const mainCategories = [
     image: "/unhas_piscina.jpg",
     subcategories: [
       {
-        en: "Manicure & Nails",
-        pt: "Manicure & Unhas",
+        en: "Manicure",
+        pt: "Manicures",
         items: [
           { en: "Simple Manicure", pt: "Manicure simples", price: "500 MZN" },
-          { en: "Manicure with polish", pt: "Manicure com pintura de verniz", price: "900 MZN" },
-          { en: "Manicure with gel polish", pt: "Manicure com pintura de verniz em gel", price: "700 MZN" },
+          { en: "Manicure with polish", pt: "Manicure com pintura de verniz", price: "700 MZN" },
+          { en: "Manicure with gel polish", pt: "Manicure com pintura de verniz em gel", price: "900 MZN" },
           { en: "Gel polish", pt: "Pintura de verniz em gel", price: "600 MZN" },
           { en: "Polish", pt: "Pintura de verniz", price: "400 MZN" },
           { en: "Overlay with gel polish", pt: "Overlay com pintura de verniz em gel", price: "900 MZN" },
           { en: "Overlay with color powder", pt: "Overlay com pó colorido", price: "800 MZN" },
           { en: "Overlay with polish", pt: "Overlay com pintura de verniz", price: "650 MZN" },
-          { en: "Artificial nails with polish", pt: "Unhas artificiais e pintura de verniz", price: "1100 MZN" },
-          { en: "Artificial nails with gel polish", pt: "Unhas artificiais e pintura de verniz em gel", price: "900 MZN" },
-          { en: "Simple maintenance", pt: "Manutenção simples", price: "1100 MZN" },
+          { en: "Artificial nails with polish", pt: "Unhas artificiais e pintura de verniz", price: "900 MZN" },
+          { en: "Artificial nails with gel polish", pt: "Unhas artificiais e pintura de verniz em gel", price: "1100 MZN" },
+          { en: "Simple maintenance", pt: "Manutenção simples", price: "900 MZN" },
           { en: "Overlay maintenance", pt: "Manutenção de overlay", price: "750 MZN" },
           { en: "Maintenance with extras", pt: "Manutenção com extras", price: "900 MZN" },
         ],
@@ -36,12 +36,12 @@ const mainCategories = [
         en: "Pedicure",
         pt: "Pedicure",
         items: [
-          { en: "Simple Pedicure", pt: "Pedicure simples", price: "900 MZN" },
-          { en: "Pedicure with gel polish", pt: "Pedicure com pintura de verniz em gel", price: "750 MZN" },
-          { en: "Pedicure with polish", pt: "Pedicure com pintura de verniz", price: "450 MZN" },
-          { en: "Gel polish", pt: "Pintura de verniz em gel", price: "300 MZN" },
-          { en: "Polish", pt: "Pintura de verniz", price: "500 MZN" },
-          { en: "Overlay with gel polish", pt: "Overlay com pintura de verniz em gel", price: "400 MZN" },
+          { en: "Simple Pedicure", pt: "Pedicure simples", price: "750 MZN" },
+          { en: "Pedicure with gel polish", pt: "Pedicure com pintura de verniz em gel", price: "1100 MZN" },
+          { en: "Pedicure with polish", pt: "Pedicure com pintura de verniz", price: "900 MZN" },
+          { en: "Gel polish", pt: "Pintura de verniz em gel", price: "450 MZN" },
+          { en: "Polish", pt: "Pintura de verniz", price: "300 MZN" },
+          { en: "Overlay with gel polish", pt: "Overlay com pintura de verniz em gel", price: "750 MZN" },
           { en: "Overlay with color powder", pt: "Overlay com pó colorido", price: "650 MZN" },
           { en: "Overlay with polish", pt: "Overlay com pintura de verniz", price: "400 MZN" },
           { en: "Overlay maintenance", pt: "Manutenção de overlay", price: "500 MZN" },
@@ -68,11 +68,11 @@ const mainCategories = [
         en: "Promotional Combos",
         pt: "Combos Promocionais",
         items: [
-          { en: "ESSENCIAL: Manicure and pedicure with polish", pt: "ESSENCIAL: Manicure e pedicure com pintura de verniz", price: "1400 MZN" },
-          { en: "HARMONIE: Overlay on hands and feet with gel polish", pt: "HARMONIE: Overlay nas mãos e nos pés com pintura de verniz em gel", price: "1900 MZN" },
-          { en: "SERENITÉ: Artificial nails with gel polish on hands and feet", pt: "SERENITÉ: Unhas artificiais com pintura de verniz em gel nas mãos e nos pés", price: "1300 MZN" },
+          { en: "ESSENCIAL: Manicure and pedicure with polish", pt: "ESSENCIAL: Manicure e pedicure com pintura de verniz", price: "1300 MZN" },
+          { en: "HARMONIE: Overlay on hands and feet with gel polish", pt: "HARMONIE: Overlay nas mãos e nos pés com pintura de verniz em gel", price: "1400 MZN" },
+          { en: "SERENITÉ: Artificial nails with gel polish on hands and feet", pt: "SERENITÉ: Unhas artificiais com pintura de verniz em gel nas mãos e nos pés", price: "1600 MZN" },
           { en: "LUMINÉ: Manicure and pedicure with gel polish", pt: "LUMINÉ: Manicure e pedicure com pintura de verniz em gel", price: "1700 MZN" },
-          { en: "CELESTIA: Artificial nails and pedicure with gel polish", pt: "CELESTIA: Unhas artificiais e pedicure com pintura de verniz em gel", price: "1600 MZN" },
+          { en: "CELESTIA: Artificial nails and pedicure with gel polish", pt: "CELESTIA: Unhas artificiais e pedicure com pintura de verniz em gel", price: "1900 MZN" },
         ],
       },
     ],
@@ -90,18 +90,18 @@ const mainCategories = [
           { en: "30-min Relaxation Massage", pt: "Massagem de relaxamento 30 Minutos", price: "900 MZN" },
           { en: "60-min Relaxation Massage", pt: "Massagem de relaxamento 60 Minutos", price: "1600 MZN" },
           { en: "Hot stone relaxation massage", pt: "Massagem de relaxamento com pedras quentes", price: "2600 MZN" },
-          { en: "Localized lymphatic drainage 30 min", pt: "Drenagem linfática (localizada) 30 minutos", price: "1600 MZN" },
-          { en: "Lymphatic drainage 60 min", pt: "Drenagem linfática 60 minutos", price: "1100 MZN" },
+          { en: "Localized lymphatic drainage 30 min", pt: "Drenagem linfática (localizada) 30 minutos", price: "1100 MZN" },
+          { en: "Lymphatic drainage 60 min", pt: "Drenagem linfática 60 minutos", price: "2100 MZN" },
           { en: "Body exfoliation", pt: "Esfoliação corporal", price: "2100 MZN" },
-          { en: "Post-op lymphatic drainage", pt: "Drenagem linfática pós operatória", price: "2100 MZN" },
+          { en: "Post-op lymphatic drainage", pt: "Drenagem linfática pós operatória", price: "1600 MZN" },
         ],
       },
       {
         en: "Facial Care",
         pt: "Tratamento facial",
         items: [
-          { en: "Express cleansing", pt: "Limpeza express", price: "2200 MZN" },
-          { en: "Deep cleansing", pt: "Limpeza profunda", price: "1600 MZN" },
+          { en: "Express cleansing", pt: "Limpeza express", price: "1600 MZN" },
+          { en: "Deep cleansing", pt: "Limpeza profunda", price: "2200 MZN" },
         ],
       },
       {
@@ -112,8 +112,8 @@ const mainCategories = [
           { en: "Chin", pt: "Queixo", price: "400 MZN" },
           { en: "Eyebrows", pt: "Sobrancelhas", price: "400 MZN" },
           { en: "Armpits", pt: "Axílas", price: "500 MZN" },
-          { en: "Half leg", pt: "Meia perna", price: "900 MZN" },
-          { en: "Full leg", pt: "Perna inteira", price: "700 MZN" },
+          { en: "Half leg", pt: "Meia perna", price: "700 MZN" },
+          { en: "Full leg", pt: "Perna inteira", price: "900 MZN" },
           { en: "Bikini", pt: "Virilha", price: "700 MZN" },
           { en: "Full bikini", pt: "Virilha completa", price: "1000 MZN" },
           { en: "Glutes", pt: "Glúteos", price: "600 MZN" },
@@ -264,11 +264,6 @@ export default function Services() {
               {language === "en"
                 ? "Register each session and receive a gift upon completion"
                 : "Registe cada sessão e ao completar receberá um mimo"}
-            </p>
-            <p className="text-center text-gray-600 text-sm">
-              {language === "en"
-                ? "Prices subject to change. Nail art may incur extra fees."
-                : "Preços sujeitos a alteração. Nail art pode ter custo adicional."}
             </p>
           </div>
         </div>
