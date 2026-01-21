@@ -85,7 +85,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gray-900">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Video */}
         <video
           className="absolute inset-0 w-full h-full object-cover"
