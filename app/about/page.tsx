@@ -31,6 +31,7 @@ export default function About() {
           loop
           playsInline
           preload="auto"
+          poster="/reception.jpg"
         >
           <source src="/reception.mp4" type="video/mp4" />
           Your browser does not support the video tag.
