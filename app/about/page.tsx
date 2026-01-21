@@ -21,7 +21,7 @@ export default function About() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-208 flex items-center justify-center overflow-hidden bg-linear-to-r from-[#1a3c34] to-[#2d5a50]">
+      <section className="relative h-208 flex items-center justify-center overflow-hidden">
         {/* Background Video */}
         <video
           ref={videoRef}
@@ -30,7 +30,7 @@ export default function About() {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           poster="/reception.jpg"
         >
           <source src="/reception.mp4" type="video/mp4" />
