@@ -94,6 +94,7 @@ export default function Home() {
           loop
           playsInline
           preload="auto"
+          poster="/salao-unhas.jpg"
         >
           <source src="/salao-unhas.mp4" type="video/mp4" />
           Your browser does not support the video tag.
