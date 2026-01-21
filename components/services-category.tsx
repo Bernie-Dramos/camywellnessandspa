@@ -71,6 +71,15 @@ export function ServicesCategory({
               )}
             </div>
           ))}
+          {category.key === "nailStudio" && (
+            <div className="mt-4 p-4 bg-gray-50 rounded-md border border-gray-200">
+              <p className="text-center text-gray-600 text-sm">
+                {language === "en"
+                  ? "DISCLAIMER: Prices subject to change. Nail art may incur extra fees."
+                  : "ATENÇÃO: Preços sujeitos a alteração. Nail art pode ter custo adicional."}
+              </p>
+            </div>
+          )}
         </div>
       )}
     </div>
