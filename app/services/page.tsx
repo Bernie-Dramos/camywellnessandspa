@@ -180,30 +180,6 @@ export default function Services() {
     if (videoRef.current) {
       videoRef.current.playbackRate = 0.75
     }
-
-    // Intersection Observer to play video when in view (fixes autoplay on live sites)
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && videoRef.current) {
-            videoRef.current.play().catch(() => {
-              // Silently handle autoplay failure
-            })
-          }
-        })
-      },
-      { threshold: 0.1 }
-    )
-
-    if (videoRef.current) {
-      observer.observe(videoRef.current)
-    }
-
-    return () => {
-      if (videoRef.current) {
-        observer.unobserve(videoRef.current)
-      }
-    }
   }, [])
   const { language } = useLanguage()
   const [openCategories, setOpenCategories] = useState<Record<string, boolean>>({})
@@ -224,6 +200,7 @@ export default function Services() {
         <video
           ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
           muted
           loop
           playsInline
