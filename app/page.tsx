@@ -93,7 +93,7 @@ export default function Home() {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           poster="/salao-unhas.jpg"
         >
           <source src="/salao-unhas.mp4" type="video/mp4" />
