@@ -73,6 +73,7 @@ const termsContent = {
         "Vouchers are non-refundable and cannot be redeemed for cash.",
         "Vouchers are valid for 60 days from the date of purchase.",
         "Lost or stolen vouchers will not be replaced.",
+        "Vouchers are non-transferable.",
       ],
     },
     {
@@ -146,6 +147,7 @@ const termsContent = {
         "Os vouchers são não-reembolsaveis e não podem ser trocados por dinheiro.",
         "Os vouchers são válidos por 60 dias após o dia de compra.",
         "Os vouchers perdidos ou roubados não serão substituídos.",
+        "Os vouchers são intransmissíveis.",
       ],
     },
     {
@@ -262,11 +264,15 @@ export default function Terms() {
                 <p className="text-3xl font-serif text-[#d4af37]">105008783</p>
               </div>
               <div className="bg-linear-to-br from-[#f8f5f0] to-white p-6 rounded-lg border border-[#d4af37]/30">
-                <h4 className="text-lg font-semibold text-[#1a3c34] mb-2">Alvará</h4>
+                <h4 className="text-lg font-semibold text-[#1a3c34] mb-2">
+                  {language === "en" ? "License" : "Alvará"}
+                </h4>
                 <p className="text-3xl font-serif text-[#d4af37]">279/10/01/2025</p>
               </div>
               <div className="bg-linear-to-br from-[#f8f5f0] to-white p-6 rounded-lg border border-[#d4af37]/30">
-                <h4 className="text-lg font-semibold text-[#1a3c34] mb-2">Início de Atividade</h4>
+                <h4 className="text-lg font-semibold text-[#1a3c34] mb-2">
+                  {language === "en" ? "Business Start Date" : "Início de Atividade"}
+                </h4>
                 <p className="text-3xl font-serif text-[#d4af37]">01/10/2025</p>
               </div>
             </div>
