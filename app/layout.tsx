@@ -37,6 +37,9 @@ export default function RootLayout({
         <meta itemProp="image" content="/Camy_Spa_Logo.png" />
         <meta property="og:image" content="/Camy_Spa_Logo.png" />
         <meta name="twitter:image" content="/Camy_Spa_Logo.png" />
+        <link rel="preload" href="/salao-unhas.mp4" as="video" type="video/mp4" />
+        <link rel="preload" href="/sala.mp4" as="video" type="video/mp4" />
+        <link rel="preload" href="/reception.mp4" as="video" type="video/mp4" />
       </head>
       <body className={`font-sans antialiased`}>
         <LanguageProvider>{children}</LanguageProvider>
