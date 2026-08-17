@@ -1,11 +1,17 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Playfair_Display } from "next/font/google"
 import { LanguageProvider } from "./providers"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+// Self-hosted at build time, so there is no third-party request to
+// fonts.gstatic.com on page load.
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-playfair",
+})
 
 const SITE_URL = "https://www.camyspa.co.mz"
 
@@ -92,7 +98,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={playfair.variable}>
       <body className={`font-sans antialiased`}>
         <script
           type="application/ld+json"
