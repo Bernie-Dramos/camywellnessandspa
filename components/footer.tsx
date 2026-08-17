@@ -43,6 +43,12 @@ export function Footer() {
                   {t("footer.terms")}
                 </Link>
               </li>
+              <li>
+                {/* The privacy policy is a section within the terms page. */}
+                <Link href="/terms" className="text-gray-300 hover:text-[#d4af37] transition-colors">
+                  {t("footer.privacy")}
+                </Link>
+              </li>
             </ul>
           </div>
 
