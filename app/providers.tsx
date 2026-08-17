@@ -212,6 +212,12 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }
   }, [language, mounted])
 
+  // Keep <html lang> in step with the active language, so screen readers use
+  // the right pronunciation and search engines classify the content correctly.
+  useEffect(() => {
+    document.documentElement.lang = language
+  }, [language])
+
   const t = (key: string): string => {
     return translations[language][key as keyof (typeof translations)["en"]] || key
   }
