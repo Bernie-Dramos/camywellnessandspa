@@ -47,6 +47,45 @@ export const metadata: Metadata = {
   },
 }
 
+// Structured data for local search. Geo coordinates are deliberately omitted
+// until the real ones are confirmed -- the About page map still carries
+// placeholder coordinates that point to the wrong province.
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "DaySpa",
+  name: "CAMY Wellness & Spa",
+  description:
+    "A calm, safe and restorative space for women in Matola A, Mozambique, offering nail studio, massage, body care, waxing, facial treatments, yoga and makeup services.",
+  url: SITE_URL,
+  image: `${SITE_URL}/og-camy.jpg`,
+  logo: `${SITE_URL}/Camy_Spa_Logo.png`,
+  telephone: "+258841921846",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Rua dos Escultores N°146",
+    addressLocality: "Matola A",
+    addressCountry: "MZ",
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "19:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "09:00",
+      closes: "18:00",
+    },
+  ],
+  priceRange: "200 - 25000 MZN",
+  currenciesAccepted: "MZN",
+  paymentAccepted: "Bank transfer, Mpesa, Card",
+  sameAs: ["https://instagram.com/camywellnessspa"],
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -60,6 +99,10 @@ export default function RootLayout({
         <link rel="preload" href="/reception.mp4" as="video" type="video/mp4" />
       </head>
       <body className={`font-sans antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
