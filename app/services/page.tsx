@@ -21,10 +21,10 @@ export default function Services() {
     }
   }, [])
   const { language } = useLanguage()
-  // Open the first category by default so prices are visible on load.
-  const [openCategories, setOpenCategories] = useState<Record<string, boolean>>({
-    [serviceCategories[0].key]: true,
-  })
+  // All categories start closed. Prices are still present in the HTML for
+  // search engines -- ServicesCategory collapses with `hidden` rather than
+  // unmounting -- so nothing needs to be open by default.
+  const [openCategories, setOpenCategories] = useState<Record<string, boolean>>({})
   const toggleCategory = (key: string) => {
     setOpenCategories((prev) => ({
       ...prev,
