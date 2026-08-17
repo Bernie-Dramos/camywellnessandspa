@@ -6,6 +6,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { useLanguage } from "@/app/providers"
 import { ChevronDown } from "lucide-react"
+import { WHATSAPP_URL } from "@/lib/booking"
 
 const termsContent = {
   en: [
@@ -295,7 +296,7 @@ export default function Terms() {
                 : "Tem dúvidas sobre nossos termos? Entre em contato:"}
             </p>
             <a
-              href="https://wa.me/258841921846"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex px-8 py-3 bg-[#d4af37] text-white font-medium rounded hover:bg-[#c9a63f] transition-colors"

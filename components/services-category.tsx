@@ -1,8 +1,9 @@
 "use client";
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, MessageCircle } from "lucide-react";
 import Image from "next/image";
 import type { ServiceCategory } from "@/lib/services-data";
+import { buildBookingUrl } from "@/lib/booking";
 
 export function ServicesCategory({
   category,
@@ -75,17 +76,38 @@ export function ServicesCategory({
                 hidden={!subOpen}
                 className="mt-2 bg-white rounded-md shadow-sm border border-gray-100"
               >
-                {sub.items.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="flex justify-between items-start gap-4 px-4 py-2 border-b border-gray-100 last:border-b-0"
-                  >
-                    <span className="text-gray-700 flex-1">{language === "en" ? item.en : item.pt}</span>
-                    <span className="text-[#d4af37] font-semibold whitespace-nowrap">
-                      {language === "en" && item.priceEn ? item.priceEn : item.price}
-                    </span>
-                  </div>
-                ))}
+                {sub.items.map((item, idx) => {
+                  const label = language === "en" ? item.en : item.pt;
+                  return (
+                    <div
+                      key={idx}
+                      className="flex justify-between items-start gap-3 px-4 py-2 border-b border-gray-100 last:border-b-0"
+                    >
+                      <span className="text-gray-700 flex-1">{label}</span>
+                      <span className="text-[#d4af37] font-semibold whitespace-nowrap">
+                        {language === "en" && item.priceEn ? item.priceEn : item.price}
+                      </span>
+                      <a
+                        href={buildBookingUrl(item, language)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title={
+                          language === "en"
+                            ? `Book ${label} on WhatsApp`
+                            : `Marcar ${label} pelo WhatsApp`
+                        }
+                        aria-label={
+                          language === "en"
+                            ? `Book ${label} on WhatsApp`
+                            : `Marcar ${label} pelo WhatsApp`
+                        }
+                        className="shrink-0 mt-0.5 text-gray-400 hover:text-[#1a3c34] focus-visible:text-[#1a3c34] transition-colors"
+                      >
+                        <MessageCircle className="w-4 h-4" />
+                      </a>
+                    </div>
+                  );
+                })}
                 {(language === "en" ? sub.noteEn : sub.notePt) && (
                   <p className="px-4 py-3 text-sm text-gray-500 italic border-t border-gray-100">
                     {language === "en" ? sub.noteEn : sub.notePt}

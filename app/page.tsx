@@ -7,6 +7,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { useLanguage } from "@/app/providers"
 import { Flower2, Sparkles, Palmtree, Heart } from "lucide-react"
+import { WHATSAPP_URL } from "@/lib/booking"
 
 const services = [
   {
@@ -242,7 +243,7 @@ export default function Home() {
               : "Descubra o serviço perfeito para sua jornada de bem-estar. Marque seu compromisso agora."}
           </p>
           <a
-            href="https://wa.me/258841921846"
+            href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex px-8 py-4 bg-[#d4af37] text-[#1a3c34] font-semibold rounded hover:bg-[#e8d4a8] transition-colors text-lg"

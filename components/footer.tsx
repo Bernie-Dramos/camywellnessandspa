@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { useLanguage } from "@/app/providers"
 import { Instagram, Mail, Phone } from "lucide-react"
+import { WHATSAPP_URL } from "@/lib/booking"
 
 export function Footer() {
   const { t } = useLanguage()
@@ -65,7 +66,7 @@ export function Footer() {
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#d4af37]" />
                 <a
-                  href="https://wa.me/258841921846"
+                  href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-[#d4af37] transition-colors"

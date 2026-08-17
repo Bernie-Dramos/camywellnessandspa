@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { useLanguage } from "@/app/providers"
 import { Menu, X } from "lucide-react"
+import { WHATSAPP_URL } from "@/lib/booking"
 import { useState } from "react"
 
 export function Header() {
@@ -70,7 +71,7 @@ export function Header() {
 
             {/* Book Now Button */}
             <a
-              href="https://wa.me/258841921846"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-[#d4af37] text-white text-sm font-medium rounded hover:bg-[#c9a63f] transition-colors"
@@ -102,7 +103,7 @@ export function Header() {
               </Link>
             ))}
             <a
-              href="https://wa.me/258841921846"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}

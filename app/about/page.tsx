@@ -6,6 +6,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { useLanguage } from "@/app/providers"
 import { MapPin, Phone, Mail, Instagram } from "lucide-react"
+import { WHATSAPP_URL } from "@/lib/booking"
 
 export default function About() {
   const { language, t } = useLanguage()
@@ -246,7 +247,7 @@ export default function About() {
                 <div>
                   <h3 className="font-serif font-semibold text-[#1a3c34] mb-2">{t("about.whatsapp")}</h3>
                   <a
-                    href="https://wa.me/258841921846"
+                    href={WHATSAPP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 hover:text-[#d4af37] transition-colors"
