@@ -165,8 +165,19 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Map Placeholder */}
             <div className="rounded-lg overflow-hidden shadow-lg h-96">
+              {/* Geocoded from the street address. The previous embed used
+                  template placeholder coordinates that pointed to Gaza
+                  province. Replace with the exact place from Camy's Google
+                  Business Profile once available. */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3637.8243095865776!2d32.37!3d-23.8!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ed6b8cae1a1a1a1%3A0x1a1a1a1a1a1a1a1a!2sMatola%2C%20Mozambique!5e0!3m2!1sen!2smz!4v1234567890"
+                title={
+                  language === "en"
+                    ? "Map showing CAMY Wellness & Spa in Matola A"
+                    : "Mapa da CAMY Wellness & Spa na Matola A"
+                }
+                src={`https://maps.google.com/maps?q=${encodeURIComponent(
+                  "Rua dos Escultores 146, Matola A, Maputo, Mozambique",
+                )}&z=16&output=embed`}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
