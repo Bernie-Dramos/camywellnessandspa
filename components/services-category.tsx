@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
+import type { ServiceCategory } from "@/lib/services-data";
 
 export function ServicesCategory({
   category,
@@ -9,7 +10,7 @@ export function ServicesCategory({
   isOpen,
   onToggle,
 }: {
-  category: any;
+  category: ServiceCategory;
   language: string;
   isOpen: boolean;
   onToggle: () => void;
@@ -51,7 +52,7 @@ export function ServicesCategory({
       {/* Always rendered, collapsed with `hidden`, so every price is present in
           the server-rendered HTML and can be indexed by search engines. */}
       <div id={panelId} hidden={!isOpen} className="px-2 md:px-8 pb-8">
-        {category.subcategories.map((sub: any, subIdx: number) => {
+        {category.subcategories.map((sub, subIdx) => {
           const subPanelId = `${panelId}-sub-${subIdx}`;
           const subOpen = openSub === subIdx;
           return (
@@ -74,7 +75,7 @@ export function ServicesCategory({
                 hidden={!subOpen}
                 className="mt-2 bg-white rounded-md shadow-sm border border-gray-100"
               >
-                {sub.items.map((item: any, idx: number) => (
+                {sub.items.map((item, idx) => (
                   <div
                     key={idx}
                     className="flex justify-between items-start gap-4 px-4 py-2 border-b border-gray-100 last:border-b-0"
