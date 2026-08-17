@@ -41,7 +41,7 @@ const termsContent = {
     {
       title: "Payment and Pricing",
       items: [
-        "Pricing: Service prices are listed on our social medias and are subject to change without notice.",
+        "Pricing: Service prices are listed on our website and are subject to change without notice.",
         "Payment Methods: We accept bank transfers, Mpesa transfers and card payments.",
         "Gratuities: Gratuities are not included in the service price and are at the client's discretion.",
       ],
@@ -79,7 +79,7 @@ const termsContent = {
     {
       title: "Changes to Terms and Conditions",
       content:
-        "The Spa reserves the right to modify these Terms and Conditions at any time. Updated terms will be posted on our social media and will be effective immediately.",
+        "The Spa reserves the right to modify these Terms and Conditions at any time. Updated terms will be posted on our website and will be effective immediately.",
     },
   ],
   pt: [
@@ -115,7 +115,7 @@ const termsContent = {
     {
       title: "Preços e pagamentos",
       items: [
-        "Preços: Os preços dos serviços estão listados nas nossas redes sociais e estão sujeitos a alterações sem aviso prévio.",
+        "Preços: Os preços dos serviços estão listados no nosso website e estão sujeitos a alterações sem aviso prévio.",
         "Métodos de pagamento: Aceitamos transferências bancárias, transferências Mpesa e pagamentos com cartão.",
         "Gorjetas: As gorjetas não estão incluídas no preço do serviço e ficam ao critério do cliente.",
       ],
@@ -153,7 +153,7 @@ const termsContent = {
     {
       title: "Alterações dos Termos e Condições",
       content:
-        "O Spa reserva-se o direito de modificar estes Termos e Condições a qualquer momento. Os termos atualizados serão publicados nas nossas redes sociais e entrarão em vigor imediatamente.",
+        "O Spa reserva-se o direito de modificar estes Termos e Condições a qualquer momento. Os termos atualizados serão publicados no nosso website e entrarão em vigor imediatamente.",
     },
   ],
 }
@@ -169,6 +169,7 @@ function TermsSection({
     <div className="border-b border-gray-200">
       <button
         onClick={onToggle}
+        aria-expanded={isOpen}
         className="w-full px-6 py-4 flex items-center justify-between bg-white hover:bg-gray-50 transition-colors text-left"
       >
         <h3 className="text-lg font-serif font-semibold text-[#1a3c34]">{title}</h3>
@@ -177,20 +178,20 @@ function TermsSection({
         />
       </button>
 
-      {isOpen && (
-        <div className="px-6 py-4 bg-gray-50 space-y-4">
-          {content && <p className="text-gray-700 leading-relaxed">{content}</p>}
-          {items && (
-            <ul className="space-y-3 list-disc list-inside">
-              {items.map((item, idx) => (
-                <li key={idx} className="text-gray-700 leading-relaxed">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      )}
+      {/* Always rendered, collapsed with `hidden`, so the full terms text is
+          present in the HTML rather than appearing only after a click. */}
+      <div hidden={!isOpen} className="px-6 py-4 bg-gray-50 space-y-4">
+        {content && <p className="text-gray-700 leading-relaxed">{content}</p>}
+        {items && (
+          <ul className="space-y-3 list-disc list-inside">
+            {items.map((item, idx) => (
+              <li key={idx} className="text-gray-700 leading-relaxed">
+                {item}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   )
 }
