@@ -116,7 +116,7 @@ export default function Home() {
           <div className="flex justify-center">
             <Link
               href="/services"
-              className="inline-flex items-center justify-center px-8 py-4 font-medium rounded text-lg text-white bg-gradient-to-r from-[#d4af37] via-[#e6c75a] to-[#f8e9a1] shadow-lg border-0 hover:from-[#c9a63f] hover:to-[#f8e9a1] hover:brightness-105 transition-all"
+              className="inline-flex items-center justify-center px-8 py-4 font-medium rounded text-lg text-white bg-linear-to from-[#d4af37] via-[#e6c75a] to-[#f8e9a1] shadow-lg border-0 hover:from-[#c9a63f] hover:to-[#f8e9a1] hover:brightness-105 transition-all"
             >
               {t("hero.cta2")}
             </Link>
