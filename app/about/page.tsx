@@ -164,27 +164,23 @@ export default function About() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Map Placeholder */}
+            {/* Map */}
             <div className="rounded-lg overflow-hidden shadow-lg h-96">
-              {/* Geocoded from the street address. The previous embed used
-                  template placeholder coordinates that pointed to Gaza
-                  province. Replace with the exact place from Camy's Google
-                  Business Profile once available. */}
+              {/* Official Google Business Profile embed for Camy Wellness and
+                  SPA (-25.971688, 32.465971). */}
               <iframe
                 title={
                   language === "en"
                     ? "Map showing CAMY Wellness & Spa in Matola A"
                     : "Mapa da CAMY Wellness & Spa na Matola A"
                 }
-                src={`https://maps.google.com/maps?q=${encodeURIComponent(
-                  "Rua dos Escultores 146, Matola A, Maputo, Mozambique",
-                )}&z=16&output=embed`}
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3586.8887714865728!2d32.46597110842892!3d-25.971688000000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee685246f59b51b%3A0xbd1863775925700c!2sCamy%20Wellness%20and%20SPA!5e0!3m2!1sen!2sin!4v1786959840631!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerPolicy="strict-origin-when-cross-origin"
               />
             </div>
 

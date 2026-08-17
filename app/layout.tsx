@@ -53,9 +53,8 @@ export const metadata: Metadata = {
   },
 }
 
-// Structured data for local search. Geo coordinates are deliberately omitted
-// until the real ones are confirmed -- the About page map still carries
-// placeholder coordinates that point to the wrong province.
+// Structured data for local search. Coordinates come from the Google
+// Business Profile listing for Camy Wellness and SPA.
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "DaySpa",
@@ -72,6 +71,13 @@ const localBusinessSchema = {
     addressLocality: "Matola A",
     addressCountry: "MZ",
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: -25.971688,
+    longitude: 32.465971,
+  },
+  hasMap:
+    "https://www.google.com/maps/place/Camy+Wellness+and+SPA/@-25.971688,32.465971,17z",
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",

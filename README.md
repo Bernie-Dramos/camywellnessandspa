@@ -119,7 +119,3 @@ For issues or questions:
 - Phone: +258 841 921 846
 - WhatsApp: https://wa.me/258841921846
 - Instagram: @camywellnessspa
- 
-
-HTML Map Embed: 
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3586.8887714865728!2d32.46597110842892!3d-25.971688000000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee685246f59b51b%3A0xbd1863775925700c!2sCamy%20Wellness%20and%20SPA!5e0!3m2!1sen!2sin!4v1786959840631!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
