@@ -7,11 +7,18 @@ import "./globals.css"
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
+const SITE_URL = "https://www.camyspa.co.mz"
+
 export const metadata: Metadata = {
-  title: "CAMY Wellness & Spa - Women's Relaxation & Self-Care in Mozambique",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "CAMY Wellness & Spa - Women's Relaxation & Self-Care in Mozambique",
+    template: "%s | CAMY Wellness & Spa",
+  },
   description:
     "Discover CAMY Wellness & Spa in Matola A, Mozambique. Indulge in professional spa services including nails, massages, yoga, and facial care. Your sanctuary of calm, beauty, and well-being.",
   keywords: ["spa", "wellness", "massage", "yoga", "nails", "Mozambique", "Matola"],
+  alternates: { canonical: "/" },
   icons: {
     icon: "/Camy_Spa_Logo.png",
     apple: "/Camy_Spa_Logo.png",
@@ -19,8 +26,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CAMY - Wellness & Spa",
     description: "Your sanctuary of calm, beauty, and well-being",
-    url: "https://camyspa.co.mz",
+    url: "/",
     siteName: "CAMY - Wellness & Spa",
+    type: "website",
+    locale: "pt_MZ",
   },
 }
 
