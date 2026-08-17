@@ -30,6 +30,20 @@ export const metadata: Metadata = {
     siteName: "CAMY - Wellness & Spa",
     type: "website",
     locale: "pt_MZ",
+    images: [
+      {
+        url: "/og-camy.jpg",
+        width: 1200,
+        height: 630,
+        alt: "CAMY Wellness & Spa - The Art of Feeling Good",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CAMY - Wellness & Spa",
+    description: "Your sanctuary of calm, beauty, and well-being",
+    images: ["/og-camy.jpg"],
   },
 }
 
@@ -41,11 +55,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/Camy_Spa_Logo.png" type="image/png" />
-        <link rel="shortcut icon" href="/Camy_Spa_Logo.png" type="image/png" />
-        <meta itemProp="image" content="/Camy_Spa_Logo.png" />
-        <meta property="og:image" content="/Camy_Spa_Logo.png" />
-        <meta name="twitter:image" content="/Camy_Spa_Logo.png" />
         <link rel="preload" href="/salao-unhas.mp4" as="video" type="video/mp4" />
         <link rel="preload" href="/sala.mp4" as="video" type="video/mp4" />
         <link rel="preload" href="/reception.mp4" as="video" type="video/mp4" />
