@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { useLanguage } from "@/app/providers"
+import { Download } from "lucide-react"
 import { ServicesCategory } from "@/components/services-category"
 import { serviceCategories } from "@/lib/services-data"
 
@@ -98,6 +99,19 @@ export default function Services() {
                 {language === "en" ? "Follow us @camywellnessspa" : "Siga-nos @camywellnessspa"}
               </p>
             </div>
+          </div>
+
+          {/* Downloadable price list */}
+          <div className="mt-8 flex justify-center">
+            <a
+              href="/camy-price-list-2026.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-[#d4af37] text-[#1a3c34] font-medium rounded hover:bg-[#f8f5f0] transition-colors"
+            >
+              <Download className="w-4 h-4 text-[#d4af37]" />
+              {language === "en" ? "Download the 2026 price list (PDF)" : "Descarregar a lista de preços 2026 (PDF)"}
+            </a>
           </div>
 
           {/* Info message moved here */}
