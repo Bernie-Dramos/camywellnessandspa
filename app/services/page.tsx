@@ -214,7 +214,10 @@ export default function Services() {
     }
   }, [])
   const { language } = useLanguage()
-  const [openCategories, setOpenCategories] = useState<Record<string, boolean>>({})
+  // Open the first category by default so prices are visible on load.
+  const [openCategories, setOpenCategories] = useState<Record<string, boolean>>({
+    [mainCategories[0].key]: true,
+  })
   const toggleCategory = (key: string) => {
     setOpenCategories((prev) => ({
       ...prev,
