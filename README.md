@@ -9,23 +9,23 @@ A beautiful, bilingual (English/Portuguese) spa website built with Next.js 16, T
 - ✨ **Elegant Design**: Gold, dark green, and cream color palette inspired by luxury spas
 - 🎯 **SEO Optimized**: Meta tags, sitemap, robots.txt, and structured data
 - 🚀 **Performance**: Image optimization, lazy loading, React Compiler enabled
-- 📝 **Comprehensive Content**: Services, pricing, testimonials, contact form, terms & conditions
+- 📝 **Comprehensive Content**: Services with full 2026 pricing, downloadable price list, terms & conditions
 
 ## Pages
 
 - **Home** (`/`): Hero section, services overview, testimonials, CTAs
 - **Services** (`/services`): Complete service listings with pricing in MZN
-- **About** (`/about`): Company info, contact details, contact form
+- **About** (`/about`): Company info, mission and values, location and contact details
 - **Terms & Conditions** (`/terms`): Full legal terms in both languages
 
 ## Tech Stack
 
 - **Framework**: Next.js 16 with App Router
 - **Styling**: Tailwind CSS v4
-- **Fonts**: Playfair Display (headings), Geist (body)
+- **Fonts**: Playfair Display (headings, self-hosted via next/font); system sans stack for body
 - **Components**: Custom React components with Lucide icons
 - **Internationalization**: Custom Language Context (EN/PT)
-- **Deployment**: Standalone Node.js (Next.js build/start)
+- **Deployment**: Netlify, auto-deploying from `main` (see `netlify.toml`)
 
 ## Getting Started
 
@@ -62,7 +62,14 @@ Edit design tokens in `app/globals.css`:
 \`\`\`
 
 ### Services & Pricing
-Edit service data in `app/services/page.tsx` and `app/providers.tsx`
+All prices live in **`lib/services-data.ts`**, a plain typed data file with no
+JSX around it. The source of truth is the price list PDF in `Assets/`.
+
+To change a price, edit the `price` field only, keeping the `"1200 MZN"`
+format. When adding a service, `en`, `pt` and `price` are all required or the
+item renders blank in one language. Then run `npm run build`, check the item
+in both EN and PT, and commit with the price in the message so git history
+doubles as a price-change log.
 
 ### Contact Information
 Update phone numbers, email, and social links in:
@@ -72,20 +79,22 @@ Update phone numbers, email, and social links in:
 
 ## Deployment
 
-### Deploy (Standalone)
+### Deploy
 
- 
+Pushing to `main` triggers a Netlify build and deploy. Pull requests get a
+deploy preview -- always check the preview in **both EN and PT** before
+merging.
+
+To run a production build locally:
+
 ```bash
-# Build production assets
 npm run build
-
-# Start production server
 npm run start
 ```
 ### Update Domain
-1. In `next.config.mjs`, update any domain references
-2. In `app/sitemap.ts` and `app/robots.ts`, update the domain URL
-3. Update social media links to point to correct contact info
+1. Update `SITE_URL` in `app/layout.tsx` (drives `metadataBase`, canonicals and JSON-LD)
+2. Update the domain in `app/sitemap.ts` and `app/robots.ts`
+3. Update the WhatsApp number in `lib/booking.ts` if it changes -- it is used site-wide
 
 ## Browser Support
 
@@ -96,10 +105,9 @@ npm run start
 
 ## Performance
 
-- Lighthouse Score: 95+
-- Core Web Vitals: All green
-- Image optimization: WebP/AVIF with fallbacks
-- React Compiler: Enabled for automatic memoization
+- Images served through `next/image` (WebP/AVIF, responsive sizes)
+- Fonts self-hosted at build time, no third-party font requests
+- Background videos are not preloaded; each page loads only its own
 
 ## License
 
@@ -112,3 +120,6 @@ For issues or questions:
 - WhatsApp: https://wa.me/258841921846
 - Instagram: @camywellnessspa
  
+
+HTML Map Embed: 
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3586.8887714865728!2d32.46597110842892!3d-25.971688000000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee685246f59b51b%3A0xbd1863775925700c!2sCamy%20Wellness%20and%20SPA!5e0!3m2!1sen!2sin!4v1786959840631!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>

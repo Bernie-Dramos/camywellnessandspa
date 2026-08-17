@@ -19,10 +19,11 @@ CAMY is a bilingual (EN/PT) spa website for women's wellness services in Mozambi
 - SEO metadata in [app/layout.tsx](app/layout.tsx) – update for new pages via `metadata` export
 
 ### Data & Services
-- **No database** – All data (services, testimonials) is **hardcoded in component files**
-- Service data structure in [app/page.tsx](app/page.tsx#L10): `{ id, icon, en, pt, descEn, descPt, image }`
-- Services page sourced from [app/services/page.tsx](app/services/page.tsx) and [app/providers.tsx](app/providers.tsx)
-- Images sourced from Unsplash (external) – configure in [next.config.mjs](next.config.mjs) `remotePatterns`
+- **No database** – content lives in code
+- **Prices live in [lib/services-data.ts](lib/services-data.ts)**, a typed data module (`ServiceCategory` / `ServiceSubcategory` / `ServiceItem`). Source of truth is the price list PDF in `Assets/`. Do not move prices back into JSX.
+- Homepage service cards in [app/page.tsx](app/page.tsx): `{ id, icon, en, pt, descEn, descPt, image }`
+- WhatsApp number and prefilled booking links: [lib/booking.ts](lib/booking.ts) – do not hardcode the number elsewhere
+- Images are local, in `public/`, served via `next/image`. `images.unsplash.com` is whitelisted in [next.config.mjs](next.config.mjs) only for the placeholder testimonial avatars.
 
 ### Component Patterns
 - All components in `components/` use `"use client"` (client-side rendering)
@@ -50,18 +51,19 @@ npm run lint         # Run ESLint
 
 - **No external CMS/API** – All content is code-based; changes require code commits
 - **No form backends** – Contact forms would need API integration (currently not implemented)
-- **Domain/URL**: Update in [next.config.mjs](next.config.mjs), [app/robots.ts](app/robots.ts), [app/sitemap.ts](app/sitemap.ts)
-- **Analytics**: No analytics by default; add your preferred provider if needed
-- **IgnoreBuildErrors**: TypeScript strict mode enabled but build errors ignored (see [next.config.mjs](next.config.mjs))
+- **Domain/URL**: `SITE_URL` in [app/layout.tsx](app/layout.tsx) drives metadataBase, canonicals and JSON-LD; also update [app/robots.ts](app/robots.ts) and [app/sitemap.ts](app/sitemap.ts)
+- **Analytics**: none yet – nothing currently measures whether the site produces bookings
+- **Type errors are NOT ignored**: builds fail on type errors. Do not re-enable `ignoreBuildErrors`.
+- **Accordions must not unmount their contents.** Both the services and terms accordions render always and collapse with the `hidden` attribute, so the text ships in the HTML and can be indexed. Reverting to `{isOpen && ...}` silently removes all prices from the page for crawlers.
 
 ## Contact & Booking Integration
-- **WhatsApp link**: `https://wa.me/258841921846` (hardcoded in [Header](components/header.tsx#L67))
-- **Phone/Email**: Update in Header, Footer, and About page as needed
+- **WhatsApp**: `WHATSAPP_URL` and `buildBookingUrl()` in [lib/booking.ts](lib/booking.ts). Service rows link to a prefilled message containing the service name and price.
+- **Phone numbers**: About page and Footer; also in the JSON-LD in [app/layout.tsx](app/layout.tsx)
 - Location: Rua Dos Escultores Nr 146, Matola A, Mozambique
 
 ## Testing & QA
 - Verify bilingual text rendering on all pages (toggle EN/PT in header)
 - Test responsive design across mobile/tablet/desktop
 - Validate SEO metadata in browser dev tools
-- Check image loading (Unsplash URLs work consistently)
 - Test language persistence on page reload (localStorage)
+- After changing the services or terms pages, confirm the content is still in the HTML: `npm run build` then grep the output in `.next/server/app/` for a known price

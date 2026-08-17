@@ -1,0 +1,16 @@
+# Deploy configuration for camyspa.co.mz.
+#
+# Kept deliberately minimal: it records the build so the deploy is
+# reproducible from the repo, without overriding anything else already set
+# in the Netlify UI. The Next.js runtime (@netlify/plugin-nextjs) is
+# installed by Netlify at build time and handles routing, image
+# optimisation and the static/SSR split.
+#
+# If the site ever needs rebuilding from scratch, this is the config.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
