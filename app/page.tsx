@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useRef, useEffect } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -33,7 +34,7 @@ const services = [
     pt: "Bem-Estar e Alinhamento",
     descEn: "Individual and group wellness classes",
     descPt: "Aulas de bem-estar individuais e em grupo",
-    image: "/yoga.png",
+    image: "/yoga.jpg",
   },
   {
     id: 4,
@@ -143,10 +144,12 @@ export default function Home() {
                 >
                     {/* Image */}
                     <div className="relative h-60 overflow-hidden">
-                    <img
-                      src={service.image || "/placeholder.svg"}
+                    <Image
+                      src={service.image}
                       alt={title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
                   </div>

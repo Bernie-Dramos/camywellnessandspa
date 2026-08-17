@@ -240,6 +240,7 @@ export default function Services() {
           loop
           playsInline
           preload="metadata"
+          poster="/sala.jpg"
         >
           <source src="/sala.mp4" type="video/mp4" />
           Your browser does not support the video tag.
