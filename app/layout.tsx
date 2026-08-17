@@ -93,11 +93,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="preload" href="/salao-unhas.mp4" as="video" type="video/mp4" />
-        <link rel="preload" href="/sala.mp4" as="video" type="video/mp4" />
-        <link rel="preload" href="/reception.mp4" as="video" type="video/mp4" />
-      </head>
       <body className={`font-sans antialiased`}>
         <script
           type="application/ld+json"
