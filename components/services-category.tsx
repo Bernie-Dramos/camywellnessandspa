@@ -64,9 +64,16 @@ export function ServicesCategory({
                       className="flex justify-between items-start gap-4 px-4 py-2 border-b border-gray-100 last:border-b-0"
                     >
                       <span className="text-gray-700 flex-1">{language === "en" ? item.en : item.pt}</span>
-                      <span className="text-[#d4af37] font-semibold whitespace-nowrap">{item.price}</span>
+                      <span className="text-[#d4af37] font-semibold whitespace-nowrap">
+                        {language === "en" && item.priceEn ? item.priceEn : item.price}
+                      </span>
                     </div>
                   ))}
+                  {(language === "en" ? sub.noteEn : sub.notePt) && (
+                    <p className="px-4 py-3 text-sm text-gray-500 italic border-t border-gray-100">
+                      {language === "en" ? sub.noteEn : sub.notePt}
+                    </p>
+                  )}
                 </div>
               )}
             </div>
